@@ -1,37 +1,36 @@
 "use client";
 
 import React, { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross2 } from "react-icons/rx";
+import { CloseIcon, HamburgerIcon } from "../../components/icons";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter()
 
-  function renderHamburgerMenu() {
+  function renderMobileNavbar() {
     return (
-      <div className="absolute top-0 right-0 bg-red-500">
-        <div className="flex flex-col">
-          <div>
-            <GiHamburgerMenu
-              onClick={() => {
-                setIsMenuOpen(true);
-              }}
-              className={`${isMenuOpen ? "hidden" : "block"}`}
-            />
-            <RxCross2
-              onClick={() => {
-                setIsMenuOpen(false);
-              }}
-              className={`${isMenuOpen ? "block" : "hidden"}`}
-            />
-          </div>
-          <div className={`${isMenuOpen ? "flex" : "hidden"} flex-col`}>
-            {renderNavbarTabItems({ text: "About", view: "mobile" })}
-            {renderNavbarTabItems({ text: "Experiences", view: "mobile" })}
-            {renderNavbarTabItems({ text: "Projects", view: "mobile" })}
-            {renderNavbarTabItems({ text: "Contact", view: "mobile" })}
+      <div className="bg-white w-screen h-screen absolute flex flex-col top-0 left-0 gap-6 px-6 pt-6">
+        <div className="flex justify-between items-center">
+          <Link href="/">
+            <h1 className="font-bold text-xl lg:text-3xl">
+              William
+            </h1>
+          </Link>
+          <div onClick={() => {
+            setIsMenuOpen(false);
+          }}>
+            <CloseIcon className="w-5 h-5" />
           </div>
         </div>
+
+        <nav className="flex flex-col gap-4">
+          {renderNavbarTabItems({ text: "About", view: "mobile", href: "about" })}
+          {renderNavbarTabItems({ text: "Experiences", view: "mobile", href: "experiences" })}
+          {renderNavbarTabItems({ text: "Projects", view: "mobile", href: "projects" })}
+          {renderNavbarTabItems({ text: "Contact", view: "mobile", href: "contact" })}
+        </nav>
       </div>
     );
   }
@@ -39,29 +38,48 @@ function Header() {
   function renderNavbarTabItems({
     text,
     view,
+    href
   }: {
     text: string;
     view: "mobile" | "web";
+    href: string
   }) {
     return (
-      <p
+      <Link
+        href={href}
         className={`cursor-pointer font-medium hover:font-bold transition-all duration-200`}
       >
         {text}
-      </p>
+      </Link>
     );
   }
 
   return (
-    <div className="px-6 lg:px-28 py-6 h-20 sticky top-0 flex justify-between items-center bg-beige">
-      <h1 className="text-primary font-bold text-xl lg:text-2xl">William</h1>
-      <div className="hidden lg:flex gap-12 flex-shrink-0">
-        {renderNavbarTabItems({ text: "About", view: "web" })}
-        {renderNavbarTabItems({ text: "Experiences", view: "web" })}
-        {renderNavbarTabItems({ text: "Projects", view: "web" })}
-        {renderNavbarTabItems({ text: "Contact", view: "web" })}
+    <div className="px-6 lg:px-20 py-6 lg:py-10 sticky top-0 flex justify-between lg:items-center bg-white">
+      <Link href="/">
+        <h1 className="font-bold text-xl lg:text-3xl">
+          William
+        </h1>
+      </Link>
+
+      <nav className="hidden lg:flex gap-10 flex-shrink-0">
+        {renderNavbarTabItems({ text: "About", view: "web", href: "about" })}
+        {renderNavbarTabItems({ text: "Experiences", view: "web", href: "experiences" })}
+        {renderNavbarTabItems({ text: "Projects", view: "web", href: "projects" })}
+        {renderNavbarTabItems({ text: "Contact", view: "web", href: "contact" })}
+      </nav>
+
+      <div className="lg:hidden flex flex-col gap-2">
+        {isMenuOpen ? (
+          renderMobileNavbar()
+        ) : (
+          <div onClick={() => {
+            setIsMenuOpen(true);
+          }}>
+            <HamburgerIcon className="w-5 h-5" />
+          </div>
+        )}
       </div>
-      <div className="sm:relative lg:hidden">{renderHamburgerMenu()}</div>
     </div>
   );
 }
