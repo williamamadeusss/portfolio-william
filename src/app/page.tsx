@@ -4,7 +4,7 @@ import Content from "./content/content";
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main>
       <Header />
       <Content />
     </main>

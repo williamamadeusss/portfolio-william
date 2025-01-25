@@ -55,7 +55,7 @@ function Header() {
   }
 
   return (
-    <div className="px-6 lg:px-20 py-6 lg:py-10 sticky top-0 flex justify-between lg:items-center bg-white">
+    <div className="px-6 lg:px-20 py-6 lg:py-10 sticky top-0 flex justify-between lg:items-center bg-white/80 backdrop-blur">
       <Link href="/">
         <h1 className="font-bold text-xl lg:text-3xl">
           William
