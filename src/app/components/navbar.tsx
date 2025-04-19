@@ -11,17 +11,17 @@ export default function NavHeader() {
 
   function renderMobileNavbar() {
     return (
-      <div className="bg-white w-screen h-screen absolute flex flex-col top-0 left-0 gap-6 px-6 pt-6">
-        <div className="flex justify-between items-center">
+      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-white px-6 pt-6">
+        <div className="flex items-center justify-between">
           <Link href="/">
-            <h1 className="font-bold text-xl lg:text-3xl">William</h1>
+            <h1 className="text-xl font-bold lg:text-3xl">William</h1>
           </Link>
           <div
             onClick={() => {
               setIsMenuOpen(false);
             }}
           >
-            <CloseIcon className="w-5 h-5" />
+            <CloseIcon className="h-5 w-5" />
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default function NavHeader() {
     return (
       <Link
         href={href}
-        className={`cursor-pointer font-medium hover:font-bold transition-all duration-200`}
+        className={`cursor-pointer font-medium transition-all duration-200 hover:font-bold`}
       >
         {text}
       </Link>
@@ -71,16 +71,16 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="px-6 lg:px-20 py-6 sticky top-0 flex justify-between lg:items-center bg-white">
+    <nav className="sticky top-0 flex justify-between bg-white px-6 py-6 lg:items-center lg:px-20">
       <Link href="/">
         <Image
           src="/images/will-logo-white.png"
           alt="logo"
-          className="w-20 aspect-square"
+          className="aspect-square w-20"
         />
       </Link>
 
-      <div className="hidden lg:flex gap-10 flex-shrink-0">
+      <div className="hidden flex-shrink-0 gap-10 lg:flex">
         {renderNavbarTabItems({ text: "About", view: "web", href: "about" })}
         {renderNavbarTabItems({
           text: "Experiences",
@@ -99,7 +99,7 @@ export default function NavHeader() {
         })}
       </div>
 
-      <div className="lg:hidden flex flex-col gap-2">
+      <div className="flex flex-col gap-2 lg:hidden">
         {isMenuOpen ? (
           renderMobileNavbar()
         ) : (
@@ -108,7 +108,7 @@ export default function NavHeader() {
               setIsMenuOpen(true);
             }}
           >
-            <HamburgerIcon className="w-5 h-5" />
+            <HamburgerIcon className="h-5 w-5" />
           </div>
         )}
       </div>

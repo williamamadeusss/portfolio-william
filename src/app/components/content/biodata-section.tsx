@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 
 export default function BiodataSection() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-      <div className="flex flex-col gap-10">
-        <div className="h-fit flex flex-col gap-4 pb-10 border-b-[6px] border-primary pt-20 ">
+    <div className="flex flex-col gap-20 lg:flex-row">
+      <div className="flex flex-col gap-10 pt-10 lg:w-3/5 lg:pt-20">
+        <div className="flex h-fit flex-col gap-4 border-b-[6px] border-primary pb-10">
           <h1 className="text-5xl font-extrabold">William Amadeus</h1>
           <p className="text-2xl font-semibold">A Software Engineer</p>
         </div>
@@ -25,7 +25,7 @@ export default function BiodataSection() {
       <Image
         src="/images/will-3.png"
         alt="foto will"
-        className="rounded-sm lg:rounded-lg aspect-square"
+        className="aspect-square rounded-full lg:w-2/5"
       />
     </div>
   );
