@@ -24,10 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <div className="bg-background">
-          <NavHeader />
-          {children}
-        </div>
+        <NavHeader />
+        {children}
       </body>
     </html>
   );
