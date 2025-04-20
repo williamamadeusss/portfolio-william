@@ -71,7 +71,7 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="sticky top-0 flex justify-between bg-white px-6 py-6 lg:items-center lg:px-20">
+    <nav className="bg-background sticky top-0 z-50 flex justify-between px-6 py-6 lg:items-center lg:px-20">
       <Link href="/">
         <Image
           src="/images/will-logo-white.png"

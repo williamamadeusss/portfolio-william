@@ -23,9 +23,9 @@ export default function BiodataSection() {
       </div>
 
       <Image
-        src="/images/will-3.png"
+        src="/images/will.jpg"
         alt="foto will"
-        className="aspect-square rounded-full lg:w-2/5"
+        className="aspect-square rounded-full object-cover lg:w-2/5"
       />
     </div>
   );
