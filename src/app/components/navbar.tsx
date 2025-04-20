@@ -2,11 +2,19 @@
 
 import React, { useState } from "react";
 import { CloseIcon, HamburgerIcon } from "../../components/icons";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "@/components/ui/image";
 
+const navbarTabItems = [
+  { route: "/", text: "Home" },
+  { route: "/projects", text: "Projects" },
+  { route: "/contact", text: "Contact" },
+  { route: "/about", text: "About" },
+];
+
 export default function NavHeader() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function renderMobileNavbar() {
@@ -25,48 +33,8 @@ export default function NavHeader() {
           </div>
         </div>
 
-        <nav className="flex flex-col gap-4">
-          {renderNavbarTabItems({
-            text: "About",
-            view: "mobile",
-            href: "about",
-          })}
-          {renderNavbarTabItems({
-            text: "Experiences",
-            view: "mobile",
-            href: "experiences",
-          })}
-          {renderNavbarTabItems({
-            text: "Projects",
-            view: "mobile",
-            href: "projects",
-          })}
-          {renderNavbarTabItems({
-            text: "Contact",
-            view: "mobile",
-            href: "contact",
-          })}
-        </nav>
+        <nav className="flex flex-col gap-4"></nav>
       </div>
-    );
-  }
-
-  function renderNavbarTabItems({
-    text,
-    view,
-    href,
-  }: {
-    text: string;
-    view: "mobile" | "web";
-    href: string;
-  }) {
-    return (
-      <Link
-        href={href}
-        className={`cursor-pointer font-medium transition-all duration-200 hover:font-bold`}
-      >
-        {text}
-      </Link>
     );
   }
 
@@ -80,22 +48,16 @@ export default function NavHeader() {
         />
       </Link>
 
-      <div className="hidden flex-shrink-0 gap-10 lg:flex">
-        {renderNavbarTabItems({ text: "About", view: "web", href: "about" })}
-        {renderNavbarTabItems({
-          text: "Experiences",
-          view: "web",
-          href: "experiences",
-        })}
-        {renderNavbarTabItems({
-          text: "Projects",
-          view: "web",
-          href: "projects",
-        })}
-        {renderNavbarTabItems({
-          text: "Contact",
-          view: "web",
-          href: "contact",
+      <div className="hidden flex-shrink-0 gap-14 lg:flex">
+        {navbarTabItems.map((item) => {
+          return (
+            <Link
+              href={item.route}
+              className={`text-lg font-medium ${pathname === item.route ? "border-b-[3px] border-primary font-semibold" : ""}`}
+            >
+              {item.text}
+            </Link>
+          );
         })}
       </div>
 
