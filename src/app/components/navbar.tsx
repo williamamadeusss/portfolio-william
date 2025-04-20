@@ -39,10 +39,10 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="bg-background sticky top-0 z-50 flex justify-between px-6 py-6 lg:items-center lg:px-20">
+    <nav className="sticky top-0 z-50 flex justify-between bg-[#202020] px-6 py-6 lg:items-center lg:px-20">
       <Link href="/">
         <Image
-          src="/images/will-logo-white.png"
+          src="/images/will-invis-white.png"
           alt="logo"
           className="aspect-square w-20"
         />

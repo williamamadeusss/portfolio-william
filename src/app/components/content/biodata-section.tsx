@@ -8,7 +8,9 @@ export default function BiodataSection() {
     <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
       <div className="flex flex-col gap-12 pt-10 lg:w-3/5 lg:pt-20">
         <div className="flex h-fit flex-col gap-4 border-b-[6px] border-primary pb-5">
-          <h1 className="text-6xl font-extrabold">William Amadeus</h1>
+          <h1 className="text-6xl font-extrabold tracking-wide">
+            WILLIAM AMADEUS
+          </h1>
           <p className="text-3xl font-semibold">A Software Engineer</p>
         </div>
 

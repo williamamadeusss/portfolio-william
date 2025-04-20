@@ -24,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <NavHeader />
-        {children}
+        <div className="text-white">
+          <NavHeader />
+          {children}
+        </div>
       </body>
     </html>
   );
