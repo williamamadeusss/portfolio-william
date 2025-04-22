@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <div className="text-background">
+        <div className="mx-auto max-w-[1540px] text-background">
           <NavHeader />
           {children}
         </div>

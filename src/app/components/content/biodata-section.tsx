@@ -5,22 +5,23 @@ import React, { useEffect, useState } from "react";
 
 export default function BiodataSection() {
   return (
-    <div className="relative flex flex-col-reverse gap-10 lg:flex-row lg:gap-20">
+    <div className="relative flex flex-col-reverse gap-14 lg:flex-row lg:gap-20">
+      {/* invisible div to setup grid layout for desktop view */}
       <div className="hidden w-[55%] lg:block" />
-      <div className="flex h-full flex-col gap-12 lg:absolute lg:w-[65%] lg:pl-20 lg:pt-32">
-        <div className="flex h-fit w-full flex-col gap-14">
-          <h1 className="flex-shrink-0 border-b-[6px] border-primary pb-6 text-[40px] font-semibold tracking-wider">
-            WILLIAM AMADEUS
-          </h1>
 
-          <div className="flex w-full flex-col gap-8">
-            <h2 className="flex w-full justify-end text-7xl font-extrabold tracking-wide">
-              SOFTWARE ENGINEER
-            </h2>
-            <h2 className="flex w-full justify-end text-7xl font-extrabold tracking-wide">
-              WEB DEVELOPER
-            </h2>
-          </div>
+      {/* biography section */}
+      <div className="flex flex-col gap-16 px-4 lg:absolute lg:w-[65%] lg:px-0 lg:pl-20 lg:pt-32">
+        <h1 className="w-full border-b-[6px] border-primary pb-4 text-[28px] font-bold tracking-wider lg:pb-6 lg:text-left lg:text-[40px] lg:font-semibold">
+          WILLIAM AMADEUS
+        </h1>
+
+        <div className="flex w-full flex-col items-end justify-end gap-10 lg:gap-8">
+          <h2 className="flex text-right text-5xl font-extrabold tracking-wide lg:text-7xl">
+            SOFTWARE ENGINEER
+          </h2>
+          <h2 className="flex text-right text-5xl font-extrabold tracking-wide lg:text-7xl">
+            WEB DEVELOPER
+          </h2>
         </div>
 
         {/* <p className="text-xl font-medium tracking-wide">
@@ -33,7 +34,7 @@ export default function BiodataSection() {
       <Image
         src="/images/will-museum.jpg"
         alt="foto will"
-        className="aspect-[3/4] object-cover lg:aspect-square lg:w-[45%]"
+        className="aspect-square object-cover lg:w-[45%]"
       />
     </div>
   );
