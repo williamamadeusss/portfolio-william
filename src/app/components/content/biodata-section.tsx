@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 
 export default function BiodataSection() {
   return (
-    <div className="relative flex flex-col gap-10 lg:flex-row lg:gap-20">
-      <div className="w-[55%]" />
-      <div className="r absolute flex h-full flex-col gap-12 lg:w-[65%] lg:pl-20 lg:pt-32">
+    <div className="relative flex flex-col-reverse gap-10 lg:flex-row lg:gap-20">
+      <div className="hidden w-[55%] lg:block" />
+      <div className="flex h-full flex-col gap-12 lg:absolute lg:w-[65%] lg:pl-20 lg:pt-32">
         <div className="flex h-fit w-full flex-col gap-14">
           <h1 className="flex-shrink-0 border-b-[6px] border-primary pb-6 text-[40px] font-semibold tracking-wider">
             WILLIAM AMADEUS
@@ -33,7 +33,7 @@ export default function BiodataSection() {
       <Image
         src="/images/will-museum.jpg"
         alt="foto will"
-        className="aspect-square rounded-lg object-cover lg:w-[45%] lg:rounded-none"
+        className="aspect-[3/4] object-cover lg:aspect-square lg:w-[45%]"
       />
     </div>
   );

@@ -39,15 +39,16 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="bg-backgroundBlack z-50 flex justify-between px-6 py-6 lg:items-center lg:px-20">
+    <nav className="bg-backgroundBlack sticky top-0 z-50 flex items-center justify-between px-4 py-2 lg:static lg:px-20 lg:py-6">
       <Link href="/">
         <Image
           src="/images/will-invis-white.png"
           alt="logo"
-          className="aspect-square w-24"
+          className="aspect-square w-16 lg:w-24"
         />
       </Link>
 
+      {/* desktop navbar tab items */}
       <div className="hidden flex-shrink-0 gap-14 lg:flex">
         {navbarTabItems.map((item) => {
           return (
@@ -61,6 +62,7 @@ export default function NavHeader() {
         })}
       </div>
 
+      {/* hamburger icon */}
       <div className="flex flex-col gap-2 lg:hidden">
         {isMenuOpen ? (
           renderMobileNavbar()
@@ -70,7 +72,7 @@ export default function NavHeader() {
               setIsMenuOpen(true);
             }}
           >
-            <HamburgerIcon className="h-5 w-5" />
+            <HamburgerIcon className="h-5 w-5 text-white" />
           </div>
         )}
       </div>

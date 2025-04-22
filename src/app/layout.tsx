@@ -11,7 +11,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "William Amadeus",
+  title: "William Amadeus | Software Engineer & Web Developer",
   description: "William's Portfolio created using Next.js and Tailwind CSS",
   icons: "/favicon.ico",
 };
