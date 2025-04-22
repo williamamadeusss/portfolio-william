@@ -39,12 +39,12 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex justify-between bg-[#202020] px-6 py-6 lg:items-center lg:px-20">
+    <nav className="bg-backgroundBlack z-50 flex justify-between px-6 py-6 lg:items-center lg:px-20">
       <Link href="/">
         <Image
           src="/images/will-invis-white.png"
           alt="logo"
-          className="aspect-square w-20"
+          className="aspect-square w-24"
         />
       </Link>
 
@@ -53,7 +53,7 @@ export default function NavHeader() {
           return (
             <Link
               href={item.route}
-              className={`text-lg font-medium ${pathname === item.route ? "border-b-[3px] border-primary font-semibold" : ""}`}
+              className={`font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
             >
               {item.text}
             </Link>

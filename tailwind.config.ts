@@ -17,6 +17,7 @@ const config: Config = {
         gray: "#f1f6fa",
         primary: "#F59E0B",
         background: "#f0f0f0",
+        backgroundBlack: "#202020",
         // primary: "#2563EB",
       },
       // fontSize: {
