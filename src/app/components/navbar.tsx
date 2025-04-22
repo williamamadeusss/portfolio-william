@@ -28,16 +28,33 @@ export default function NavHeader() {
               className="aspect-square w-20 lg:w-24"
             />
           </Link>
-          <div
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
-            <CloseIcon className="h-5 w-5" />
+
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+              className="inline-flex items-center justify-center rounded-md"
+              aria-expanded={isOpen}
+            >
+              <div className="relative flex h-6 w-6 flex-col items-center justify-center">
+                <span
+                  className={`absolute top-2.5 h-0.5 w-6 translate-y-0 -rotate-45 transform bg-background`}
+                />
+
+                <span
+                  className={`absolute top-3 h-0.5 w-6 bg-background opacity-0`}
+                />
+
+                <span
+                  className={`absolute top-2.5 h-0.5 w-6 rotate-45 transform bg-background`}
+                />
+              </div>
+            </button>
           </div>
         </div>
 
-        <nav className="flex flex-col gap-4"></nav>
+        <div className="pl-2">nyenyeye</div>
       </div>
     );
   }
@@ -77,21 +94,12 @@ export default function NavHeader() {
         >
           <div className="relative flex h-6 w-6 flex-col items-center justify-center">
             <span
-              className={`absolute h-0.5 w-6 transform bg-background transition-all duration-200 ease-in-out ${
-                isOpen ? "top-2.5 translate-y-0 -rotate-45" : "top-1 rotate-0"
-              }`}
+              className={`absolute top-1 h-0.5 w-6 transform bg-background`}
             />
+            <span className={`absolute top-3 h-0.5 w-6 bg-background`} />
+
             <span
-              className={`absolute top-2 h-0.5 w-6 bg-background transition-all ease-in-out ${
-                isOpen
-                  ? "opacity-0 duration-150"
-                  : "duration-450 top-3 opacity-100"
-              }`}
-            />
-            <span
-              className={`absolute h-0.5 w-6 transform bg-background transition-all duration-200 ease-in-out ${
-                isOpen ? "top-2.5 rotate-45" : "top-5 rotate-0"
-              }`}
+              className={`absolute top-5 h-0.5 w-6 transform bg-background`}
             />
           </div>
         </button>
