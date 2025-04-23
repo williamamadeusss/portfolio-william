@@ -22,10 +22,14 @@ export default function NavHeader() {
   };
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const element = document.getElementById(id);
+    if (!element) return;
+    const navbarHeight =
+      (document.querySelector("nav") as HTMLElement)?.clientHeight || 0;
+
+    const designatedIdYPosition =
+      element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top: designatedIdYPosition, behavior: "smooth" });
   };
 
   function renderMobileNavbar() {
