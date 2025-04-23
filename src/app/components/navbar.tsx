@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { CloseIcon, HamburgerIcon } from "../../components/icons";
-import { usePathname, useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "@/components/ui/image";
 
@@ -19,16 +19,24 @@ export default function NavHeader() {
 
   function renderMobileNavbar() {
     return (
-      <div className="bg-backgroundBlack absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 px-4 py-2">
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ duration: 0.2 }}
+        className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-backgroundBlack px-4 py-2"
+      >
+        {/* mobile navbar header */}
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
               src="/images/will-invis-white.png"
               alt="logo"
-              className="aspect-square w-20 lg:w-24"
+              className="h-20 w-20 flex-shrink-0"
             />
           </Link>
 
+          {/* close icon */}
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => {
@@ -54,13 +62,28 @@ export default function NavHeader() {
           </div>
         </div>
 
-        <div className="pl-2">nyenyeye</div>
-      </div>
+        {/* mobile navbar tab items */}
+        <div className="flex flex-col gap-4 pl-2">
+          {navbarTabItems.map((item) => {
+            return (
+              <Link
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                href={item.route}
+                className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${pathname === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
+              >
+                {item.text}
+              </Link>
+            );
+          })}
+        </div>
+      </motion.div>
     );
   }
 
   return (
-    <nav className="bg-backgroundBlack sticky top-0 z-50 flex items-center justify-between px-4 py-2 lg:static lg:px-20 lg:py-4">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-2 lg:static lg:px-20 lg:py-4">
       <Link href="/">
         <Image
           src="/images/will-invis-white.png"
@@ -105,7 +128,7 @@ export default function NavHeader() {
         </button>
       </div>
 
-      {isOpen && renderMobileNavbar()}
+      <AnimatePresence>{isOpen && renderMobileNavbar()}</AnimatePresence>
     </nav>
   );
 }
