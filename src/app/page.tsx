@@ -2,7 +2,7 @@ import BiodataSection from "./components/content/biodata-section";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-40">
+    <main className="flex flex-col gap-20">
       <BiodataSection />
       <div id="projects" className="h-screen bg-red-500">
         project

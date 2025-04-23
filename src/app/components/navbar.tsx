@@ -8,14 +8,21 @@ import Image from "@/components/ui/image";
 
 const navbarTabItems = [
   { route: "/", text: "Home" },
-  { route: "#projects", text: "Projects" },
-  { route: "#contact", text: "Contact" },
-  { route: "#about", text: "About" },
+  { route: "projects", text: "Projects" },
+  { route: "contact", text: "Contact" },
+  { route: "about", text: "About" },
 ];
 
 export default function NavHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   function renderMobileNavbar() {
     return (
@@ -96,12 +103,13 @@ export default function NavHeader() {
       <div className="hidden flex-shrink-0 gap-14 lg:flex">
         {navbarTabItems.map((item) => {
           return (
-            <Link
-              href={item.route}
+            <button
+              // href={item.route}
+              onClick={() => scrollToSection(item.route)}
               className={`font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
             >
               {item.text}
-            </Link>
+            </button>
           );
         })}
       </div>
