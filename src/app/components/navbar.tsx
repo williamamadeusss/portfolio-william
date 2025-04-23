@@ -22,13 +22,18 @@ export default function NavHeader() {
   };
 
   const scrollToSection = (id: string) => {
+    // directly scroll to the section
+    // document.getElementById(id)?.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start",
+    // });
     const element = document.getElementById(id);
     if (!element) return;
     const navbarHeight =
       (document.querySelector("nav") as HTMLElement)?.clientHeight || 0;
 
     const designatedIdYPosition =
-      element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      element.getBoundingClientRect().top + window.scrollY + 1 - navbarHeight;
     window.scrollTo({ top: designatedIdYPosition, behavior: "smooth" });
   };
 
@@ -113,17 +118,16 @@ export default function NavHeader() {
       <div className="hidden flex-shrink-0 gap-14 lg:flex">
         {navbarTabItems.map((item) => {
           return (
-            <button
-              // href={item.route}
+            <div
               onClick={() => {
                 item.route === "biodata"
                   ? scrollToTop()
                   : scrollToSection(item.route);
               }}
-              className={`font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
+              className={`cursor-pointer font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
             >
               {item.text}
-            </button>
+            </div>
           );
         })}
       </div>
