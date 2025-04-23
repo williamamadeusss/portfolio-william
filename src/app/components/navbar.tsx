@@ -7,15 +7,19 @@ import Link from "next/link";
 import Image from "@/components/ui/image";
 
 const navbarTabItems = [
-  { route: "/", text: "Home" },
+  { route: "biodata", text: "Home" },
+  { route: "about", text: "About" },
   { route: "projects", text: "Projects" },
   { route: "contact", text: "Contact" },
-  { route: "about", text: "About" },
 ];
 
 export default function NavHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -90,7 +94,7 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-2 lg:static lg:px-20 lg:py-4">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-2 lg:px-20">
       <Link href="/">
         <Image
           src="/images/will-invis-white.png"
@@ -105,7 +109,11 @@ export default function NavHeader() {
           return (
             <button
               // href={item.route}
-              onClick={() => scrollToSection(item.route)}
+              onClick={() => {
+                item.route === "biodata"
+                  ? scrollToTop()
+                  : scrollToSection(item.route);
+              }}
               className={`font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
             >
               {item.text}
