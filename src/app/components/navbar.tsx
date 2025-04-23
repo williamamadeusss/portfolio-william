@@ -81,15 +81,17 @@ export default function NavHeader() {
         <div className="flex flex-col gap-4 pl-2">
           {navbarTabItems.map((item) => {
             return (
-              <Link
+              <div
                 onClick={() => {
+                  item.route === "biodata"
+                    ? scrollToTop()
+                    : scrollToSection(item.route);
                   setIsOpen(false);
                 }}
-                href={item.route}
                 className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${pathname === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
               >
                 {item.text}
-              </Link>
+              </div>
             );
           })}
         </div>

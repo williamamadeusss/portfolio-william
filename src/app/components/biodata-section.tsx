@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 export default function BiodataSection() {
   return (
-    <div className="relative flex flex-col-reverse gap-14 lg:flex-row lg:gap-20 lg:pb-8">
+    <div className="relative flex flex-col-reverse gap-14 lg:flex-row lg:gap-20">
       {/* invisible div to setup grid layout for desktop view */}
       <div className="hidden w-[55%] lg:block" />
 
