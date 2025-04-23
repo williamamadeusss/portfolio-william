@@ -8,9 +8,9 @@ import Image from "@/components/ui/image";
 
 const navbarTabItems = [
   { route: "/", text: "Home" },
-  { route: "/projects", text: "Projects" },
-  { route: "/contact", text: "Contact" },
-  { route: "/about", text: "About" },
+  { route: "#projects", text: "Projects" },
+  { route: "#contact", text: "Contact" },
+  { route: "#about", text: "About" },
 ];
 
 export default function NavHeader() {
