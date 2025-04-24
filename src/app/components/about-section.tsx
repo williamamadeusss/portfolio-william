@@ -10,7 +10,7 @@ export default function AboutSection() {
       <Image
         src="/images/will.jpg"
         alt="about will"
-        className="h-[87vh] w-[45%] object-cover"
+        className="h-[90vh] w-[45%] object-cover"
       />
 
       <div className="flex w-[55%] flex-col gap-10 px-4 lg:px-20 lg:pt-12">

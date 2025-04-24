@@ -27,7 +27,7 @@ export default function NavHeader() {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.8 },
     );
 
     navbarTabItems.forEach((item) => {
@@ -65,15 +65,15 @@ export default function NavHeader() {
         animate={{ x: 0 }}
         exit={{ x: "-100%" }}
         transition={{ duration: 0.2 }}
-        className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-backgroundBlack px-4 py-2"
+        className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-backgroundBlack px-4 py-6"
       >
         {/* mobile navbar header */}
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
-              src="/images/will-invis-white.png"
+              src="/images/will-invis-white-CROPPED.png"
               alt="logo"
-              className="h-20 w-20 flex-shrink-0"
+              className="w-14"
             />
           </Link>
 
@@ -104,7 +104,7 @@ export default function NavHeader() {
         </div>
 
         {/* mobile navbar tab items */}
-        <div className="flex flex-col gap-4 pl-2">
+        <div className="flex flex-col gap-4">
           {navbarTabItems.map((item) => {
             return (
               <div
@@ -126,12 +126,12 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-2 lg:px-20">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-20">
       <Link href="/">
         <Image
-          src="/images/will-invis-white.png"
+          src="/images/will-invis-white-CROPPED.png"
           alt="logo"
-          className="aspect-square w-20 lg:w-24"
+          className="w-14 lg:w-[70px]"
         />
       </Link>
 
