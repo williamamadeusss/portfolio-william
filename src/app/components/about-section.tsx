@@ -5,25 +5,29 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="flex flex-col-reverse bg-background text-backgroundBlack lg:flex-row"
+      className="flex flex-col-reverse bg-background text-backgroundBlack lg:h-[46rem] lg:flex-row"
     >
       <Image
         src="/images/will.jpg"
         alt="about will"
-        className="h-[46rem] w-[45%] object-cover"
+        className="hidden w-[45%] object-cover lg:block"
       />
 
-      <div className="flex w-[55%] flex-col gap-10 px-4 lg:px-20 lg:pt-12">
-        <h2 className="flex w-full justify-end border-b-[6px] border-primary pb-6 text-mediumHeading font-extrabold">
+      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-14 lg:px-20 lg:py-16">
+        <h2 className="flex w-full justify-end border-b-[6px] border-primary pb-3 text-title font-extrabold tracking-wide lg:pb-6 lg:text-mediumHeading">
           About William
         </h2>
 
         <p className="text-neutral-color-80 text-medium">
-          I’m William Amadeus, a Frontend-Focused Software Engineer dedicated to
-          building scalable, performant, and user-friendly web applications.
-          With a deep understanding of Next.js and Tailwind CSS, I specialize in
-          turning complex design systems into clean, accessible, and
-          maintainable codebases.
+          I’m <span className="font-bold text-primary">William Amadeus</span>, a
+          Frontend-Focused Software Engineer dedicated to building scalable,
+          performant, and user-friendly web applications. With a deep
+          understanding of{" "}
+          <span className="font-bold text-primary">
+            Next.js and Tailwind CSS
+          </span>
+          , I specialize in turning complex design systems into clean,
+          accessible, and maintainable codebases.
           <br />
           <br />
           My technical strengths lie in translating product goals and UI/UX
