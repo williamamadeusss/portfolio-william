@@ -13,7 +13,7 @@ export default function AboutSection() {
         className="hidden w-[45%] object-cover lg:block"
       />
 
-      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-14 lg:px-20 lg:py-16">
+      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-20 lg:py-12">
         <h2 className="flex w-full justify-end border-b-[6px] border-primary pb-3 text-title font-extrabold tracking-wide lg:pb-6 lg:text-mediumHeading">
           About William
         </h2>

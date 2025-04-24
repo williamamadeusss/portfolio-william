@@ -32,7 +32,7 @@ const config: Config = {
       fontSize: {
         xsmall: ["10px", { letterSpacing: "0.5px" }],
         small: ["12px", { letterSpacing: "0.4px" }],
-        medium: ["18px", { letterSpacing: "0.5px" }],
+        medium: ["20px", { letterSpacing: "0.5px" }],
         large: ["16px", { letterSpacing: "0.5px" }],
         title: "1.75rem",
         heading: "2.5rem",
