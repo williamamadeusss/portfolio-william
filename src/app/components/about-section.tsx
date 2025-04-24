@@ -10,15 +10,15 @@ export default function AboutSection() {
       <Image
         src="/images/will.jpg"
         alt="about will"
-        className="h-fit w-[45%] object-cover"
+        className="h-[87vh] w-[45%] object-cover"
       />
 
       <div className="flex w-[55%] flex-col gap-10 px-4 lg:px-20 lg:pt-12">
         <h2 className="flex w-full justify-end border-b-[6px] border-primary pb-6 text-mediumHeading font-extrabold">
-          about WILLIAM
+          About William
         </h2>
 
-        <p className="text-2xl">
+        <p className="text-xl">
           I’m William Amadeus, a Frontend-Focused Software Engineer dedicated to
           building scalable, performant, and user-friendly web applications.
           With a deep understanding of Next.js and Tailwind CSS, I specialize in

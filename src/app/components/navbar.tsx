@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -16,6 +16,27 @@ const navbarTabItems = [
 export default function NavHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("biodata");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    navbarTabItems.forEach((item) => {
+      const section = document.getElementById(item.route);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -93,7 +114,7 @@ export default function NavHeader() {
                     : scrollToSection(item.route);
                   setIsOpen(false);
                 }}
-                className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${pathname === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
+                className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${activeSection === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
               >
                 {item.text}
               </div>
@@ -124,7 +145,7 @@ export default function NavHeader() {
                   ? scrollToTop()
                   : scrollToSection(item.route);
               }}
-              className={`cursor-pointer font-medium uppercase tracking-widest ${pathname === item.route ? "border-b-[3px] border-primary" : ""}`}
+              className={`cursor-pointer font-medium uppercase tracking-widest duration-75 ${activeSection === item.route ? "border-b-[3px] border-primary" : ""}`}
             >
               {item.text}
             </div>
