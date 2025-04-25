@@ -18,7 +18,7 @@ export default function AboutSection() {
           About William
         </h2>
 
-        <p className="text-neutral-color-80 text-medium">
+        <p className="text-medium text-neutral-color-80">
           I’m <span className="font-bold text-primary">William Amadeus</span>, a
           Frontend-Focused Software Engineer dedicated to building scalable,
           performant, and user-friendly web applications. With a deep
