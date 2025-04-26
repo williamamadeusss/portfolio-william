@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -34,11 +37,11 @@ const config: Config = {
         small: ["12px", { letterSpacing: "0.4px" }],
         medium: ["20px", { letterSpacing: "0.5px" }],
         large: ["16px", { letterSpacing: "0.5px" }],
-        title: "1.75rem",
+        title: "1.6rem",
         heading: "2.5rem",
-        smallHeading: ["2.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
-        mediumHeading: ["3.5rem", { letterSpacing: "0.4px", lineHeight: "1" }],
-        bigHeading: ["4.75rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        smallHeading: ["2.1rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        mediumHeading: ["3.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        bigHeading: ["4.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
       },
     },
   },
