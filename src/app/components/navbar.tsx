@@ -145,7 +145,7 @@ export default function NavHeader() {
                   ? scrollToTop()
                   : scrollToSection(item.route);
               }}
-              className={`cursor-pointer font-medium uppercase tracking-widest duration-75 ${activeSection === item.route ? "border-b-[3px] border-primary" : ""}`}
+              className={`cursor-pointer border-b-[3px] font-medium uppercase tracking-widest transition-all duration-200 ease-in-out ${activeSection === item.route ? "border-primary" : "border-transparent"}`}
             >
               {item.text}
             </div>
