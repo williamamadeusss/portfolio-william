@@ -1,20 +1,17 @@
-import BiodataSection from "./components/content/biodata-section";
+import AboutSection from "./components/about-section";
+import BiodataSection from "./components/biodata-section";
+import ProjectsSection from "./components/projects-section";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-40 px-4 lg:mt-12 lg:px-20">
+    <main className="flex flex-col">
       <BiodataSection />
-      <p>la</p>
-      <p>la</p>
-      <p>la</p>
-      <p>la</p>
-      <p>la</p>
-      <p>la </p>
-      <p>la </p>
-      <p>la </p>
-      <p>la </p>
-      <p>la </p>
-      <p>la </p>
+      <AboutSection />
+      <ProjectsSection />
+
+      <div id="contact" className="h-screen bg-green-500">
+        contact
+      </div>
     </main>
   );
 }

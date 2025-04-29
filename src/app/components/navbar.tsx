@@ -1,79 +1,181 @@
 "use client";
 
-import React, { useState } from "react";
-import { CloseIcon, HamburgerIcon } from "../../components/icons";
-import { usePathname, useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "@/components/ui/image";
 
 const navbarTabItems = [
-  { route: "/", text: "Home" },
-  { route: "/projects", text: "Projects" },
-  { route: "/contact", text: "Contact" },
-  { route: "/about", text: "About" },
+  { route: "biodata", text: "Home" },
+  { route: "about", text: "About" },
+  { route: "projects", text: "Projects" },
+  { route: "contact", text: "Contact" },
 ];
 
 export default function NavHeader() {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("biodata");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.8 },
+    );
+
+    navbarTabItems.forEach((item) => {
+      const section = document.getElementById(item.route);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const scrollToSection = (id: string) => {
+    // directly scroll to the section
+    // document.getElementById(id)?.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start",
+    // });
+    const element = document.getElementById(id);
+    if (!element) return;
+    const navbarHeight =
+      (document.querySelector("nav") as HTMLElement)?.clientHeight || 0;
+
+    const designatedIdYPosition =
+      element.getBoundingClientRect().top + window.scrollY + 1 - navbarHeight;
+    window.scrollTo({ top: designatedIdYPosition, behavior: "smooth" });
+  };
 
   function renderMobileNavbar() {
     return (
-      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-white px-6 pt-6">
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ duration: 0.2 }}
+        className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-backgroundBlack px-4 py-6"
+      >
+        {/* mobile navbar header */}
         <div className="flex items-center justify-between">
           <Link href="/">
-            <h1 className="text-xl font-bold lg:text-3xl">William</h1>
+            <Image
+              src="/images/will-invis-white-CROPPED.png"
+              alt="logo"
+              className="w-14"
+            />
           </Link>
-          <div
-            onClick={() => {
-              setIsMenuOpen(false);
-            }}
-          >
-            <CloseIcon className="h-5 w-5" />
+
+          {/* close icon */}
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+              className="inline-flex items-center justify-center rounded-md"
+              aria-expanded={isOpen}
+            >
+              <div className="relative flex h-6 w-6 flex-col items-center justify-center">
+                <span
+                  className={`absolute top-2.5 h-0.5 w-6 translate-y-0 -rotate-45 transform bg-background`}
+                />
+
+                <span
+                  className={`absolute top-3 h-0.5 w-6 bg-background opacity-0`}
+                />
+
+                <span
+                  className={`absolute top-2.5 h-0.5 w-6 rotate-45 transform bg-background`}
+                />
+              </div>
+            </button>
           </div>
         </div>
 
-        <nav className="flex flex-col gap-4"></nav>
-      </div>
+        {/* mobile navbar tab items */}
+        <div className="flex flex-col gap-4">
+          {navbarTabItems.map((item) => {
+            return (
+              <div
+                onClick={() => {
+                  item.route === "biodata"
+                    ? scrollToTop()
+                    : scrollToSection(item.route);
+                  setIsOpen(false);
+                }}
+                className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${activeSection === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
+              >
+                {item.text}
+              </div>
+            );
+          })}
+        </div>
+      </motion.div>
     );
   }
 
   return (
-    <nav className="bg-background sticky top-0 z-50 flex justify-between px-6 py-6 lg:items-center lg:px-20">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-20">
       <Link href="/">
         <Image
-          src="/images/will-logo-white.png"
+          src="/images/will-invis-white-CROPPED.png"
           alt="logo"
-          className="aspect-square w-20"
+          className="w-14 lg:w-[70px]"
         />
       </Link>
 
+      {/* desktop navbar tab items */}
       <div className="hidden flex-shrink-0 gap-14 lg:flex">
         {navbarTabItems.map((item) => {
           return (
-            <Link
-              href={item.route}
-              className={`text-lg font-medium ${pathname === item.route ? "border-b-[3px] border-primary font-semibold" : ""}`}
+            <div
+              onClick={() => {
+                item.route === "biodata"
+                  ? scrollToTop()
+                  : scrollToSection(item.route);
+              }}
+              className={`cursor-pointer border-b-[3px] font-medium uppercase tracking-widest transition-all duration-200 ease-in-out ${activeSection === item.route ? "border-primary" : "border-transparent"}`}
             >
               {item.text}
-            </Link>
+            </div>
           );
         })}
       </div>
 
-      <div className="flex flex-col gap-2 lg:hidden">
-        {isMenuOpen ? (
-          renderMobileNavbar()
-        ) : (
-          <div
-            onClick={() => {
-              setIsMenuOpen(true);
-            }}
-          >
-            <HamburgerIcon className="h-5 w-5" />
+      {/* hamburger icon */}
+      <div className="flex items-center lg:hidden">
+        <button
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+          className="inline-flex items-center justify-center rounded-md"
+          aria-expanded={isOpen}
+        >
+          <div className="relative flex h-6 w-6 flex-col items-center justify-center">
+            <span
+              className={`absolute top-1 h-0.5 w-6 transform bg-background`}
+            />
+            <span className={`absolute top-3 h-0.5 w-6 bg-background`} />
+
+            <span
+              className={`absolute top-5 h-0.5 w-6 transform bg-background`}
+            />
           </div>
-        )}
+        </button>
       </div>
+
+      <AnimatePresence>{isOpen && renderMobileNavbar()}</AnimatePresence>
     </nav>
   );
 }

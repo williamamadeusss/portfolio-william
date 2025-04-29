@@ -11,7 +11,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "William Amadeus",
+  title: "William Amadeus | Software Engineer & Web Developer",
   description: "William's Portfolio created using Next.js and Tailwind CSS",
   icons: "/favicon.ico",
 };
@@ -24,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <NavHeader />
-        {children}
+        <div className="mx-auto max-w-[1540px] text-background">
+          <NavHeader />
+          {children}
+        </div>
       </body>
     </html>
   );

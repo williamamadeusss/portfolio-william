@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,18 +20,29 @@ const config: Config = {
         gray: "#f1f6fa",
         primary: "#F59E0B",
         background: "#f0f0f0",
+        backgroundBlack: "#202020",
+        "neutral-color": {
+          100: "#1B1916",
+          80: "#484744",
+          60: "#767573",
+          40: "#A4A3A2",
+          20: "#D1D1D0",
+          10: "#E8E8E8",
+          5: "#F4F4F3",
+        },
         // primary: "#2563EB",
       },
-      // fontSize: {
-      //   xs: ["10px", { letterSpacing: "0.5px" }],
-      //   sm: ["12px", { letterSpacing: "0.4px" }],
-      //   md: ["14px", { letterSpacing: "0.25px" }],
-      //   lg: ["16px", { letterSpacing: "0.5px" }],
-      //   xl: ["20px", { letterSpacing: "0.5px" }],
-      //   xxl: "28px",
-      //   title: "48px",
-      //   display: "40px",
-      // },
+      fontSize: {
+        xsmall: ["10px", { letterSpacing: "0.5px" }],
+        small: ["12px", { letterSpacing: "0.4px" }],
+        medium: ["20px", { letterSpacing: "0.5px" }],
+        large: ["16px", { letterSpacing: "0.5px" }],
+        title: "1.6rem",
+        heading: "2.5rem",
+        smallHeading: ["2.1rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        mediumHeading: ["3.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        bigHeading: ["4.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+      },
     },
   },
   plugins: [],
