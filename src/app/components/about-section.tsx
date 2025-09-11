@@ -10,7 +10,7 @@ export default function AboutSection() {
       <Image
         src="/images/will.jpg"
         alt="about will"
-        className="hidden w-[45%] object-cover lg:block"
+        className="hidden h-auto w-[45%] object-cover lg:block lg:self-stretch"
       />
 
       <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-20 lg:py-12">

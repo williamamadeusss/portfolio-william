@@ -19,6 +19,9 @@ export default function NavHeader() {
   const [activeSection, setActiveSection] = useState<string>("biodata");
 
   useEffect(() => {
+    const navElement = document.querySelector("nav") as HTMLElement | null;
+    const navbarHeight = navElement?.clientHeight || 0;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,7 +30,11 @@ export default function NavHeader() {
           }
         });
       },
-      { threshold: 0.8 },
+      {
+        // account for sticky navbar overlaying the viewport
+        rootMargin: `-${navbarHeight}px 0px 0px 0px`,
+        threshold: 0.4,
+      },
     );
 
     navbarTabItems.forEach((item) => {
@@ -136,7 +143,7 @@ export default function NavHeader() {
       </Link>
 
       {/* desktop navbar tab items */}
-      <div className="hidden flex-shrink-0 gap-14 lg:flex">
+      <div className="hidden flex-shrink-0 gap-10 lg:flex">
         {navbarTabItems.map((item) => {
           return (
             <div
