@@ -4,58 +4,15 @@ import Image from "@/components/ui/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-
-interface Project {
-  title: string;
-  projectSlug: string;
-  shortDescription: string;
-  url: string;
-  techStacks: string[];
-  thumbnail: string;
-}
-
-const projects = [
-  {
-    title: "Indramas",
-    projectSlug: "indramas",
-    shortDescription: "shortDescription 1",
-    url: "https://indramas.flonkin.com/",
-    techStacks: [],
-    thumbnail: "",
-  },
-  {
-    title: "Personal Website",
-    projectSlug: "personal-website",
-    shortDescription: "shortDescription 2",
-    url: "https://indramas.flonkin.com/",
-    techStacks: [],
-    thumbnail: "",
-  },
-  {
-    title: "Stokku",
-    projectSlug: "stokku",
-    shortDescription: "shortDescription 1",
-    url: "https://stokku.netlify.app/",
-    techStacks: [],
-    thumbnail: "",
-  },
-  {
-    title: "GAEA",
-    projectSlug: "gaea",
-    shortDescription: "shortDescription 2",
-    url: "https://gaea.co.id/",
-    techStacks: [],
-    thumbnail: "/images/projects/homepage-gaea.png",
-  },
-];
+import { Project, projects } from "@/data/projects";
 
 export default function ProjectsSection() {
-  let [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
     <div
       id="projects"
-      className="flex flex-col gap-20 bg-backgroundBlack px-20 py-16 text-background"
+      className="flex flex-col gap-16 bg-backgroundBlack p-20 text-background"
     >
       <h2 className="text-center font-montserrat text-mediumHeading font-extrabold tracking-wide">
         PROJECTS
@@ -95,12 +52,24 @@ function ProjectCard({
       onMouseEnter={() => setHoveredCard(project.projectSlug)}
       onMouseLeave={() => setHoveredCard(null)}
     >
-      {/* image background */}
-      <Image
-        src={project.thumbnail}
-        alt={project.title}
-        className="aspect-video w-full rounded-lg object-cover"
-      />
+      {/* image / video background */}
+      {project.video ? (
+        <video
+          autoPlay
+          muted
+          playsInline
+          className="h-full w-full rounded-lg object-cover"
+          loop
+        >
+          <source src={project.thumbnail} />
+        </video>
+      ) : (
+        <Image
+          src={project.thumbnail}
+          alt={project.title}
+          className="aspect-video w-full rounded-lg object-cover"
+        />
+      )}
 
       {/* dark overlay */}
       <div
@@ -119,8 +88,7 @@ function ProjectCard({
         <h3 className="text-smallHeading font-bold text-background">
           {project.title}
         </h3>
-
-        <p className="">{project.shortDescription}</p>
+        <p className="text-smallMedium">{project.shortDescription}</p>
       </div>
     </Link>
   );
