@@ -31,7 +31,7 @@ export const projects = [
     shortDescription: "shortDescription 1",
     url: "https://stokku.netlify.app/",
     techStacks: [],
-    thumbnail: "",
+    thumbnail: "/images/projects/homepage-stokku.png",
   },
   {
     title: "GAEA",

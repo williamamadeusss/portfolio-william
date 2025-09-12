@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Project, projects } from "@/data/projects";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectsSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -74,21 +75,23 @@ function ProjectCard({
       {/* dark overlay */}
       <div
         className={cn(
-          "absolute inset-0 rounded-lg bg-black/80 transition-opacity duration-300",
+          "absolute inset-0 rounded-lg bg-black/85 transition-opacity duration-300",
           hoveredCard === project.projectSlug ? "opacity-100" : "opacity-0",
         )}
       />
 
       <div
         className={cn(
-          "absolute flex h-full w-full flex-col justify-end gap-3 p-8 transition-opacity duration-300",
+          "absolute flex h-full w-full flex-col justify-end gap-2 p-8 transition-opacity duration-300",
           hoveredCard === project.projectSlug ? "opacity-100" : "opacity-0",
         )}
       >
-        <h3 className="text-smallHeading font-bold text-background">
+        <h3 className="font-montserrat text-smallHeading font-bold text-primary">
           {project.title}
         </h3>
-        <p className="text-smallMedium">{project.shortDescription}</p>
+        <p className="text-medium">{project.shortDescription}</p>
+        {/* <p>tech stacks</p> */}
+        <Button className="mt-4">LEARN MORE</Button>
       </div>
     </Link>
   );

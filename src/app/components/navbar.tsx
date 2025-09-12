@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "@/components/ui/image";
 
@@ -14,7 +14,8 @@ const navbarTabItems = [
 ];
 
 export default function NavHeader() {
-  const pathname = usePathname();
+  const router = useRouter();
+  const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("biodata");
 
@@ -43,18 +44,31 @@ export default function NavHeader() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathName]);
+
+  // After navigating back to home, read any pending target section and scroll
+  useEffect(() => {
+    if (pathName !== "/") return;
+    if (typeof window === "undefined") return;
+
+    const pending = window.sessionStorage.getItem("pendingScrollSection");
+    if (!pending) return;
+
+    requestAnimationFrame(() => {
+      if (pending === "biodata") {
+        scrollToTop();
+      } else {
+        scrollToSection(pending);
+      }
+      window.sessionStorage.removeItem("pendingScrollSection");
+    });
+  }, [pathName]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const scrollToSection = (id: string) => {
-    // directly scroll to the section
-    // document.getElementById(id)?.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start",
-    // });
     const element = document.getElementById(id);
     if (!element) return;
     const navbarHeight =
@@ -116,6 +130,18 @@ export default function NavHeader() {
             return (
               <div
                 onClick={() => {
+                  if (pathName !== "/") {
+                    if (typeof window !== "undefined") {
+                      window.sessionStorage.setItem(
+                        "pendingScrollSection",
+                        item.route,
+                      );
+                    }
+                    router.push("/");
+                    setIsOpen(false);
+                    return;
+                  }
+
                   item.route === "biodata"
                     ? scrollToTop()
                     : scrollToSection(item.route);
@@ -148,6 +174,16 @@ export default function NavHeader() {
           return (
             <div
               onClick={() => {
+                if (pathName !== "/") {
+                  if (typeof window !== "undefined") {
+                    window.sessionStorage.setItem(
+                      "pendingScrollSection",
+                      item.route,
+                    );
+                  }
+                  router.push("/");
+                  return;
+                }
                 item.route === "biodata"
                   ? scrollToTop()
                   : scrollToSection(item.route);
