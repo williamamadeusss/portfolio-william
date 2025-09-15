@@ -36,6 +36,7 @@ const config: Config = {
         small: ["12px", { letterSpacing: "0.4px" }],
         smallMedium: ["14px", { letterSpacing: "0.5px" }],
         medium: ["16px", { letterSpacing: "0.5px" }],
+        mediumLarge: ["18px", { letterSpacing: "0.5px" }],
         large: ["20px", { letterSpacing: "0.5px" }],
         title: "1.6rem",
         heading: "2.5rem",
