@@ -5,7 +5,7 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="flex flex-col-reverse bg-background text-backgroundBlack lg:h-[46rem] lg:flex-row"
+      className="flex flex-col-reverse bg-background text-backgroundBlack lg:h-[52rem] lg:flex-row"
     >
       <Image
         src="/images/will.jpg"
@@ -13,12 +13,12 @@ export default function AboutSection() {
         className="hidden w-[45%] object-cover lg:block"
       />
 
-      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-20 lg:py-12">
+      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:p-20">
         <h2 className="border-b-[6px] border-primary pb-3 text-right font-montserrat text-title font-extrabold tracking-wide lg:pb-4 lg:text-mediumHeading">
           ABOUT ME
         </h2>
 
-        <p className="text-medium text-neutral-color-80">
+        <p className="text-large text-neutral-color-80">
           I’m <span className="font-bold text-primary">William Amadeus</span>, a
           Frontend-Focused Software Engineer dedicated to building scalable,
           performant, and user-friendly web applications. With a deep

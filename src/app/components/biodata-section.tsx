@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "@/components/ui/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function BiodataSection() {
   return (

@@ -47,5 +47,26 @@ function CloseIcon({ className }: { className?: string }) {
     </div>
   );
 }
+function LeftArrowIcon({ className }: { className?: string }) {
+  return (
+    <div className="flex items-center justify-center">
+      <svg
+        className={`fill-current ${className}`}
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M4.87132 7.22866H14V8.77144H4.87132L8.8943 12.9091L7.83365 14L2 8.00005L7.83365 2L8.8943 3.09091L4.87132 7.22866Z"
+            // fill="white"
+          />
+        </g>
+      </svg>
+    </div>
+  );
+}
 
-export { HamburgerIcon, CloseIcon };
+export { HamburgerIcon, CloseIcon, LeftArrowIcon };

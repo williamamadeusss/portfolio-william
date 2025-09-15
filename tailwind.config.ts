@@ -2,9 +2,8 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -33,10 +32,12 @@ const config: Config = {
         // primary: "#2563EB",
       },
       fontSize: {
-        xsmall: ["10px", { letterSpacing: "0.5px" }],
+        xsmall: ["10px", { letterSpacing: "0.4px" }],
         small: ["12px", { letterSpacing: "0.4px" }],
-        medium: ["20px", { letterSpacing: "0.5px" }],
-        large: ["16px", { letterSpacing: "0.5px" }],
+        smallMedium: ["14px", { letterSpacing: "0.5px" }],
+        medium: ["16px", { letterSpacing: "0.5px" }],
+        mediumLarge: ["18px", { letterSpacing: "0.5px" }],
+        large: ["20px", { letterSpacing: "0.5px" }],
         title: "1.6rem",
         heading: "2.5rem",
         smallHeading: ["2.1rem", { letterSpacing: "0.4px", lineHeight: "1" }],
