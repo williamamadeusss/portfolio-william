@@ -13,7 +13,7 @@ export default function ProjectsSection() {
   return (
     <div
       id="projects"
-      className="flex flex-col gap-16 bg-backgroundBlack p-20 text-background"
+      className="flex flex-col gap-16 bg-backgroundBlack px-4 py-10 text-background lg:px-10 lg:py-20 xl:px-20"
     >
       <h2 className="text-center font-montserrat text-mediumHeading font-extrabold tracking-wide">
         PROJECTS

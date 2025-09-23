@@ -41,7 +41,15 @@ const config: Config = {
         title: "1.6rem",
         heading: "2.5rem",
         smallHeading: ["2.1rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        smallMediumHeading: [
+          "2.75rem",
+          { letterSpacing: "0.4px", lineHeight: "1" },
+        ],
         mediumHeading: ["3.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        mediumBigHeading: [
+          "3.75rem",
+          { letterSpacing: "0.4px", lineHeight: "1" },
+        ],
         bigHeading: ["4.25rem", { letterSpacing: "0.4px", lineHeight: "1" }],
       },
     },
