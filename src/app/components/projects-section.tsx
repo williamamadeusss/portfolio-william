@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Project, projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
+import useMediaQuery from "@/lib/media-query";
 
 export default function ProjectsSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -13,12 +14,13 @@ export default function ProjectsSection() {
   return (
     <div
       id="projects"
-      className="flex flex-col gap-16 bg-backgroundBlack px-4 py-10 text-background lg:px-10 lg:py-20 xl:px-20"
+      className="flex flex-col gap-8 bg-backgroundBlack px-4 py-10 text-background lg:gap-16 lg:px-10 lg:py-20 xl:px-20"
     >
-      <h2 className="text-center font-montserrat text-mediumHeading font-extrabold tracking-wide">
+      <h2 className="text-center font-montserrat text-title font-extrabold tracking-wide lg:text-mediumHeading">
         PROJECTS
       </h2>
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}
@@ -41,6 +43,8 @@ function ProjectCard({
   hoveredCard: string | null;
   setHoveredCard: (data: string | null) => void;
 }) {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 512px)");
+
   return (
     <Link
       className={cn(
@@ -76,22 +80,29 @@ function ProjectCard({
       <div
         className={cn(
           "absolute inset-0 rounded-lg bg-black/85 transition-opacity duration-300",
-          hoveredCard === project.projectSlug ? "opacity-100" : "opacity-0",
+          hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
         )}
       />
 
       <div
         className={cn(
-          "absolute flex h-full w-full flex-col justify-end gap-2 p-8 transition-opacity duration-300",
-          hoveredCard === project.projectSlug ? "opacity-100" : "opacity-0",
+          "absolute flex h-full w-full flex-col justify-end gap-1 p-4 transition-opacity duration-300 lg:gap-2 lg:p-8",
+          hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
         )}
       >
-        <h3 className="font-montserrat text-smallHeading font-bold text-primary">
+        <h3 className="font-montserrat text-title font-bold text-primary lg:text-smallHeading">
           {project.title}
         </h3>
-        <p className="text-medium">{project.shortDescription}</p>
+        <p className="line-clamp-1 text-smallMedium lg:line-clamp-2 lg:text-medium">
+          {project.shortDescription}
+        </p>
         {/* <p>tech stacks</p> */}
-        <Button className="mt-4">LEARN MORE</Button>
+        <Button
+          className="mt-3 lg:mt-4"
+          size={isSmallDevice ? "small" : "default"}
+        >
+          LEARN MORE
+        </Button>
       </div>
     </Link>
   );

@@ -39,8 +39,8 @@ const config: Config = {
         mediumLarge: ["18px", { letterSpacing: "0.5px" }],
         large: ["20px", { letterSpacing: "0.5px" }],
         title: "1.6rem",
-        heading: "2.5rem",
         smallHeading: ["2.1rem", { letterSpacing: "0.4px", lineHeight: "1" }],
+        heading: "2.5rem",
         smallMediumHeading: [
           "2.75rem",
           { letterSpacing: "0.4px", lineHeight: "1" },
