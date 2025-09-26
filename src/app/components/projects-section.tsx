@@ -79,7 +79,7 @@ function ProjectCard({
       {/* dark overlay */}
       <div
         className={cn(
-          "absolute inset-0 rounded-lg bg-black/85 transition-opacity duration-300",
+          "absolute inset-0 rounded-lg bg-black/70 transition-opacity duration-300 lg:bg-black/85",
           hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
         )}
       />
