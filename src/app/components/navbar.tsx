@@ -159,7 +159,7 @@ export default function NavHeader() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-20">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-10 xl:px-20">
       <Link href="/">
         <Image
           src="/images/will-invis-white-CROPPED.png"

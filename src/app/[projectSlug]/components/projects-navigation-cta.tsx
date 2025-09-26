@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import { LeftArrowIcon } from "@/components/icons";
 import { projects } from "@/data/projects";
 import { useRouter } from "next/navigation";
+import useMediaQuery from "@/lib/media-query";
 
 export default function ProjectsNavigationCTA({
   projectSlug,
 }: {
   projectSlug: string;
 }) {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 512px)");
   const router = useRouter();
 
   function viewNextProject() {
@@ -38,9 +40,9 @@ export default function ProjectsNavigationCTA({
   }
 
   return (
-    <div className="flex w-full justify-center gap-10">
+    <div className="flex w-full justify-center gap-4 lg:gap-10">
       <Button
-        size={"large"}
+        size={isSmallDevice ? "small" : "large"}
         onClick={() => {
           viewPreviousProject();
         }}
@@ -50,7 +52,7 @@ export default function ProjectsNavigationCTA({
       </Button>
 
       <Button
-        size={"large"}
+        size={isSmallDevice ? "small" : "large"}
         onClick={() => {
           viewNextProject();
         }}

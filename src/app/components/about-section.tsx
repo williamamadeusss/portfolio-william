@@ -5,7 +5,7 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="flex flex-col-reverse bg-background text-backgroundBlack lg:h-[52rem] lg:flex-row"
+      className="flex flex-col-reverse bg-background text-backgroundBlack lg:flex-row"
     >
       <Image
         src="/images/will.jpg"
@@ -13,7 +13,7 @@ export default function AboutSection() {
         className="hidden w-[45%] object-cover lg:block"
       />
 
-      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:p-20">
+      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-10 lg:py-20 xl:px-20">
         <h2 className="border-b-[6px] border-primary pb-3 text-right font-montserrat text-title font-extrabold tracking-wide lg:pb-4 lg:text-mediumHeading">
           ABOUT ME
         </h2>
