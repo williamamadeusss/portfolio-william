@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import NavHeader from "./components/navbar";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="mx-auto max-w-[1540px] text-background">
           <NavHeader />
           {children}
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
