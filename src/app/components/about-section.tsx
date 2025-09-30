@@ -19,10 +19,10 @@ export default function AboutSection() {
         </h2>
 
         <p className="text-large text-neutral-color-80">
-          I’m <span className="font-bold text-primary">William Amadeus</span>, a
-          Frontend-Focused Software Engineer dedicated to building scalable,
-          performant, and user-friendly web applications. With a deep
-          understanding of{" "}
+          I’m William Amadeus, a{" "}
+          <span className="font-bold text-primary">Frontend Developer</span>{" "}
+          dedicated to building scalable, performant, and user-friendly web
+          applications. With a deep understanding of{" "}
           <span className="font-bold text-primary">
             Next.js and Tailwind CSS
           </span>
@@ -31,18 +31,23 @@ export default function AboutSection() {
           <br />
           <br />
           My technical strengths lie in translating product goals and UI/UX
-          designs into robust web experiences. I thrive in fast-paced
-          environments where attention to detail and performance matter, and I’m
-          constantly sharpening my skills to stay aligned with industry best
-          practices.
+          designs into robust web experiences. I thrive in{" "}
+          <span className="font-bold text-primary">
+            fast-paced environments
+          </span>{" "}
+          where attention to detail and performance matter, and I’m constantly
+          sharpening my skills to stay aligned with industry best practices.
           <br />
           <br />
           What drives me most is the challenge of solving complex
           problems—whether it’s bringing ambitious UI designs to life,
           fine-tuning performance, or diving into new technologies. I’m always
-          eager to push beyond my comfort zone and continuously grow as a
-          developer, exploring new areas of specialization and expanding my
-          capabilities with each project.
+          eager to push beyond my comfort zone and{" "}
+          <span className="font-bold text-primary">
+            continuously grow as a developer
+          </span>
+          , exploring new areas of specialization and expanding my capabilities
+          with each project.
         </p>
       </div>
     </div>
