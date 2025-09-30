@@ -1,5 +1,6 @@
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons";
 import Image from "@/components/ui/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -18,9 +19,29 @@ export default function Footer() {
             Socials
           </p>
           <div className="flex items-center gap-4">
-            <LinkedinIcon className="h-5 w-5 cursor-pointer text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
-            <GithubIcon className="h-5 w-5 cursor-pointer text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
-            <InstagramIcon className="h-5 w-5 cursor-pointer text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
+            <Link
+              href="https://www.linkedin.com/in/william-amadeus-86667a224/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedinIcon className="h-5 w-5 text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
+            </Link>
+
+            <Link
+              href="https://github.com/williamamadeusss"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubIcon className="h-5 w-5 text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
+            </Link>
+
+            <Link
+              href="https://www.instagram.com/williamamadeusss/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon className="h-5 w-5 text-backgroundBlack duration-200 hover:text-primary lg:h-6 lg:w-6" />
+            </Link>
           </div>
         </div>
 
