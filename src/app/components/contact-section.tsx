@@ -52,26 +52,27 @@ export default function ContactSection() {
       return;
     }
     // success scheme
-    toast("niggers");
+    toast("Sending message...");
+    window.location.href = `mailto:williamama34@gmail.com?subject=Collaboration opportunity with ${formData.name}&body=${formData.message}`;
   }
 
   return (
     <div
       id="contact"
-      className="relative flex min-h-screen flex-col gap-6 bg-backgroundBlack px-4 py-10 lg:flex-row lg:gap-10 lg:px-10 lg:py-20 xl:px-20"
+      className="relative flex min-h-screen flex-col gap-6 bg-backgroundBlack px-4 py-10 lg:flex-row lg:px-10 lg:py-20 xl:gap-10 xl:px-20"
     >
       <Particles className="absolute inset-0 w-full" />
 
-      <div className="flex w-full flex-col gap-12 lg:w-[55%]">
+      <div className="flex w-full flex-col gap-8 lg:gap-12 xl:w-[55%]">
         {/* header */}
         <div className="flex flex-col gap-4">
           <h1 className="text-center font-montserrat text-smallHeading font-extrabold lg:text-bigHeading">
             CONTACT.
           </h1>
 
-          <p className="text-mediumLarge">
+          <p className="text-medium xl:text-mediumLarge">
             I’m always eager to learn and grow. Feel free to reach out if you’d
-            like to talk about frontend development, software development, or
+            like to talk about frontend stuffs, software development, or
             potential project collaborations.
           </p>
         </div>
@@ -114,7 +115,8 @@ export default function ContactSection() {
         </div>
 
         <Button
-          size={"large"}
+          className="w-full lg:w-fit"
+          size={isMediumDevice ? "large" : "default"}
           onClick={() => {
             handleSubmitForm();
           }}
@@ -125,7 +127,7 @@ export default function ContactSection() {
 
       {/* globe 3d element */}
       {isMediumDevice ? (
-        <div className="lg:w-[45%]">
+        <div className="shrink-0 lg:h-[32.4rem] lg:w-[50%] xl:h-[38.5rem] xl:w-[45%]">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       ) : (

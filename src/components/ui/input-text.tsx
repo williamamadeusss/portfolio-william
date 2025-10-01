@@ -58,9 +58,7 @@ export default function InputText({
         )}
 
         {errorMessages && (
-          <p className="text-body-sm font-medium text-red-400">
-            {errorMessages}
-          </p>
+          <p className="text-small font-medium text-red-400">{errorMessages}</p>
         )}
       </div>
     </div>
