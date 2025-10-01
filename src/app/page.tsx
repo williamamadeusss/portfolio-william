@@ -9,7 +9,7 @@ export default function Home() {
       <BiodataSection />
       <AboutSection />
       <ProjectsSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </main>
   );
 }
