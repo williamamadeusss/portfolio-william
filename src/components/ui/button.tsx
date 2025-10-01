@@ -15,7 +15,7 @@ const buttonVariants = cva(
       size: {
         small: "py-2 px-6 text-sm",
         default: "py-2 px-8 text-md tracking-wide",
-        large: "py-3 px-10 text-lg tracking-wider",
+        large: "py-[10px] px-10 text-[20px] tracking-wider",
         icon: "size-9",
       },
     },
