@@ -173,6 +173,7 @@ export default function NavHeader() {
         {navbarTabItems.map((item) => {
           return (
             <div
+              key={item.route}
               onClick={() => {
                 if (pathName !== "/") {
                   if (typeof window !== "undefined") {
