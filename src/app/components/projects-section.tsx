@@ -15,7 +15,7 @@ export default function ProjectsSection() {
   return (
     <div
       id="projects"
-      className="relative flex flex-col gap-6 overflow-hidden bg-backgroundBlack px-4 py-10 text-background lg:gap-12 lg:px-10 lg:py-20 xl:px-20"
+      className="relative flex flex-col gap-6 overflow-hidden bg-backgroundBlack px-4 py-10 text-background lg:gap-10 lg:px-10 lg:py-20 xl:px-20"
     >
       <Spotlight />
       <h2 className="text-center font-montserrat text-smallHeading font-extrabold tracking-wide lg:text-bigHeading">
