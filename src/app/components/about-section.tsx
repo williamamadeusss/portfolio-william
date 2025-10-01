@@ -13,12 +13,12 @@ export default function AboutSection() {
         className="hidden w-[45%] object-cover lg:block"
       />
 
-      <div className="flex flex-col gap-8 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-10 lg:py-20 xl:px-20">
-        <h2 className="border-b-[6px] border-primary pb-3 text-right font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-mediumHeading">
+      <div className="flex flex-col gap-6 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-10 lg:py-20 xl:px-20">
+        <h2 className="border-b-[6px] border-primary pb-2 text-right font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">
           ABOUT ME
         </h2>
 
-        <p className="text-large text-neutral-color-80">
+        <p className="text-medium text-neutral-color-80 lg:text-large">
           I’m William Amadeus, a{" "}
           <span className="font-bold text-primary">Frontend Developer</span>{" "}
           dedicated to building scalable, performant, and user-friendly web

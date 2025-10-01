@@ -3,14 +3,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap  transition-all  disabled:cursor-not-allowed disabled:opacity-50 shrink-0 outline-none w-fit font-semibold",
+  "cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap transition-all  disabled:cursor-not-allowed disabled:opacity-50 shrink-0 outline-none w-fit  font-bold",
   {
     variants: {
       intent: {
         primary:
-          "border bg-transparent text-primary-10 border-primary-10 hover:border-transparent hover:bg-primary hover:text-backgroundBlack ",
+          "bg-transparent text-primary border border-primary hover:border-transparent hover:bg-primary hover:text-background",
         secondary:
-          "border bg-transparent text-white border-white hover:border-transparent hover:bg-white hover:text-primary-10",
+          "border bg-transparent text-background border-background hover:border-transparent hover:bg-background hover:text-primary",
       },
       size: {
         small: "py-2 px-6 text-sm",

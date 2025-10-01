@@ -86,7 +86,7 @@ export default function NavHeader() {
         animate={{ x: 0 }}
         exit={{ x: "-100%" }}
         transition={{ duration: 0.2 }}
-        className="absolute left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-backgroundBlack px-4 py-6"
+        className="absolute left-0 top-0 flex h-[100lvh] w-screen flex-col gap-10 bg-backgroundBlack px-4 py-6"
       >
         {/* mobile navbar header */}
         <div className="flex items-center justify-between">
@@ -129,6 +129,7 @@ export default function NavHeader() {
           {navbarTabItems.map((item) => {
             return (
               <div
+                key={item.route}
                 onClick={() => {
                   if (pathName !== "/") {
                     if (typeof window !== "undefined") {
@@ -147,7 +148,7 @@ export default function NavHeader() {
                     : scrollToSection(item.route);
                   setIsOpen(false);
                 }}
-                className={`flex-shrink-0 rounded-md p-2 uppercase tracking-widest ${activeSection === item.route ? "bg-background font-semibold text-backgroundBlack" : "font-medium"}`}
+                className={`w-fit flex-shrink-0 border-b-[3px] pb-1 pr-5 text-large uppercase tracking-widest text-background ${activeSection === item.route ? "border-primary font-bold" : "border-transparent font-medium"}`}
               >
                 {item.text}
               </div>

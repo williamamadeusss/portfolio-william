@@ -65,8 +65,8 @@ export default function ContactSection() {
 
       <div className="flex w-full flex-col gap-8 lg:gap-12 xl:w-[55%]">
         {/* header */}
-        <div className="flex flex-col gap-4">
-          <h1 className="text-center font-montserrat text-smallHeading font-extrabold lg:text-bigHeading">
+        <div className="flex flex-col gap-4 lg:gap-8">
+          <h1 className="border-b-[6px] border-primary pb-2 font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">
             CONTACT.
           </h1>
 
@@ -115,6 +115,7 @@ export default function ContactSection() {
         </div>
 
         <Button
+          intent={"primary"}
           className="w-full lg:w-fit"
           size={isMediumDevice ? "large" : "default"}
           onClick={() => {
