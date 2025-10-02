@@ -1,10 +1,5 @@
 "use client";
-import React, {
-  useState,
-  ImgHTMLAttributes,
-  useCallback,
-  useEffect,
-} from "react";
+import React, { useState, useEffect } from "react";
 
 interface ImageWithFallbackProps {
   fallbackSrc?: string;
@@ -13,6 +8,7 @@ interface ImageWithFallbackProps {
   height?: number;
   className?: string;
   src: string;
+  loading?: "eager" | "lazy";
 }
 const Image: React.FC<ImageWithFallbackProps> = ({
   src,
@@ -20,6 +16,7 @@ const Image: React.FC<ImageWithFallbackProps> = ({
   alt,
   width,
   height,
+  loading = "lazy",
   ...rest
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
@@ -47,6 +44,7 @@ const Image: React.FC<ImageWithFallbackProps> = ({
   return (
     <img
       {...rest}
+      loading={loading}
       src={imgSrc ? imgSrc : fallbackSrc}
       alt={alt}
       width={width}

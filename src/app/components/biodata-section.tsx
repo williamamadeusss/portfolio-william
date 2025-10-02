@@ -26,6 +26,7 @@ export default function BiodataSection() {
       </div>
 
       <Image
+        loading="eager"
         src="/images/will-museum.jpg"
         alt="foto will"
         className="aspect-square object-cover lg:w-[45%]"

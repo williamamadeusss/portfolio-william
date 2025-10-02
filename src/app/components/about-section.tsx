@@ -8,6 +8,7 @@ export default function AboutSection() {
       className="flex flex-col-reverse bg-background text-backgroundBlack lg:flex-row"
     >
       <Image
+        loading="lazy"
         src="/images/will.jpg"
         alt="about will"
         className="hidden w-[45%] object-cover lg:block"

@@ -92,6 +92,7 @@ export default function NavHeader() {
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
+              loading="eager"
               src="/images/will-invis-white-CROPPED.png"
               alt="logo"
               className="w-14"
@@ -163,6 +164,7 @@ export default function NavHeader() {
     <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-10 xl:px-20">
       <Link href="/">
         <Image
+          loading="eager"
           src="/images/will-invis-white-CROPPED.png"
           alt="logo"
           className="w-14 lg:w-[70px]"

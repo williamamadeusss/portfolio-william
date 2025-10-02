@@ -72,6 +72,7 @@ function ProjectCard({
         </video>
       ) : (
         <Image
+          loading="lazy"
           src={project.thumbnail}
           alt={project.title}
           className="aspect-video w-full rounded-lg object-cover"
