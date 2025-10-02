@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
 body {
   margin: 0;
   font-family: var(--font-open-sans);

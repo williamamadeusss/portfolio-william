@@ -5,6 +5,7 @@ import "./globals.css";
 import NavHeader from "./components/navbar";
 import Footer from "./components/footer";
 import { Toaster } from "@/components/ui/sonner";
+import CustomCursor from "@/components/ui/custom-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
+        <CustomCursor />
         <Toaster
           position="top-center"
           toastOptions={{
