@@ -7,12 +7,19 @@ export default function AboutSection() {
       id="about"
       className="flex flex-col-reverse bg-background text-backgroundBlack lg:flex-row"
     >
-      <div>
+      {/* <img
+        loading="lazy"
+        src="/images/will.jpg"
+        alt="about will"
+        className="hidden w-[45%] object-cover lg:block"
+      /> */}
+      <div className="relative hidden aspect-[0.85/1] w-[45%] lg:block">
         <Image
           loading="lazy"
           src="/images/will.jpg"
           alt="about will"
-          className="hidden w-[45%] object-cover lg:block"
+          fill
+          className="object-cover object-center"
         />
       </div>
 

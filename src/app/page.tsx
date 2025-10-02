@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <BiodataSection />
-      {/* <AboutSection />
+      <AboutSection />
       <ProjectsSection />
-      <ContactSection /> */}
+      <ContactSection />
     </main>
   );
 }
