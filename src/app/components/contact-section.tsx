@@ -128,11 +128,11 @@ export default function ContactSection() {
 
       {/* globe 3d element */}
       {isMediumDevice ? (
-        <div className="shrink-0 lg:h-[32.4rem] lg:w-[50%] xl:h-[38.5rem] xl:w-[45%]">
+        <div className="cursor-hover shrink-0 lg:h-[32.4rem] lg:w-[50%] xl:h-[38.5rem] xl:w-[45%]">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       ) : (
-        <div className="h-96">
+        <div className="cursor-hover h-96">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       )}

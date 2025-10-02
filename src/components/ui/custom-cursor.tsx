@@ -75,8 +75,8 @@ export default function CustomCursor() {
       {/* Main cursor dot */}
       <motion.div
         className={cn(
-          "pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-primary",
-          isHovering && "mix-blend-difference",
+          "pointer-events-none fixed left-0 top-0 z-[9999] rounded-full bg-primary",
+          isHovering ? "h-[6px] w-[6px] mix-blend-difference" : "h-2 w-2",
         )}
         style={{
           x: cursorXSpring,
@@ -91,7 +91,7 @@ export default function CustomCursor() {
         transition={{ duration: 0.2 }}
       />
 
-      {/* Cursor ring */}
+      {/* Cursor ring - only visible on hover */}
       <motion.div
         className={cn(
           "pointer-events-none fixed left-0 top-0 z-[9998] h-8 w-8 rounded-full border-2 border-primary",
@@ -104,8 +104,8 @@ export default function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isVisible ? (isHovering ? 1.5 : 1) : 0,
-          opacity: isVisible ? (isHovering ? 0.5 : 1) : 0,
+          scale: isHovering ? 1.5 : 0,
+          opacity: isHovering ? 0.5 : 0,
         }}
         transition={{ duration: 0.3 }}
       />
