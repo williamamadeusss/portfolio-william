@@ -1,6 +1,4 @@
-"use client";
-
-import Image from "@/components/ui/image";
+import Image from "next/image";
 import React from "react";
 
 export default function BiodataSection() {
@@ -25,11 +23,16 @@ export default function BiodataSection() {
         </div>
       </div>
 
-      <Image
-        src="/images/will-museum.jpg"
-        alt="foto will"
-        className="aspect-square object-cover lg:w-[45%]"
-      />
+      <div className="relative -z-10 aspect-square w-full shrink-0 lg:w-[45%]">
+        <Image
+          priority
+          loading="eager"
+          src="/images/will-museum.webp"
+          alt="foto will"
+          fill
+          className="object-cover object-center"
+        />
+      </div>
     </div>
   );
 }

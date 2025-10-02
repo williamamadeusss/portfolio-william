@@ -1,9 +1,9 @@
-import Image from "@/components/ui/image";
 import { projects } from "@/data/projects";
 import React from "react";
 import ViewAllProjectsButton from "./components/view-all-projects-button";
 import Link from "next/link";
 import ProjectsNavigationCTA from "./components/projects-navigation-cta";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ projectSlug: project.projectSlug }));
@@ -79,11 +79,14 @@ export default async function ProjectSlug({
               <source src={project.thumbnail} />
             </video>
           ) : (
-            <Image
-              src={project?.thumbnail!}
-              alt={project?.title!}
-              className="aspect-video w-full rounded-md object-cover"
-            />
+            <div className="aspect-video w-full rounded-md">
+              <Image
+                src={project?.thumbnail!}
+                alt={project?.title!}
+                fill
+                className="rounded-md object-cover object-center"
+              />
+            </div>
           )}
 
           {/* project overview */}

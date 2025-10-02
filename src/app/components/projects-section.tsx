@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "@/components/ui/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -8,6 +7,7 @@ import { Project, projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import useMediaQuery from "@/lib/media-query";
 import { Spotlight } from "@/components/ui/spotlight";
+import Image from "next/image";
 
 export default function ProjectsSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -71,11 +71,15 @@ function ProjectCard({
           <source src={project.thumbnail} />
         </video>
       ) : (
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          className="aspect-video w-full rounded-lg object-cover"
-        />
+        <div className="relative aspect-video w-full rounded-lg">
+          <Image
+            loading="lazy"
+            src={project.thumbnail}
+            alt={project.title}
+            fill
+            className="rounded-lg object-cover"
+          />
+        </div>
       )}
 
       {/* dark overlay */}

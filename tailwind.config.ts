@@ -8,6 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        manrope: ["Manrope", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
       backgroundImage: {

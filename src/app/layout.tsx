@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Manrope } from "next/font/google";
+import { Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 import NavHeader from "./components/navbar";
 import Footer from "./components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import CustomCursor from "@/components/ui/custom-cursor";
 
-const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -26,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={manrope.className}>
+      <body className={`${manrope.className} ${montserrat.className}`}>
         <CustomCursor />
         <Toaster
           position="top-center"
@@ -36,7 +39,7 @@ export default function RootLayout({
             },
           }}
         />
-        <div className="mx-auto max-w-[1540px] text-background">
+        <div className="font-manrope mx-auto max-w-[1540px] text-background">
           <NavHeader />
           {children}
           <Footer />

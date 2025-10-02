@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "@/components/ui/image";
+import Image from "next/image";
 
 const navbarTabItems = [
   { route: "biodata", text: "Home" },
@@ -90,11 +90,13 @@ export default function NavHeader() {
       >
         {/* mobile navbar header */}
         <div className="flex items-center justify-between">
-          <Link href="/">
+          <Link href="/" className="relative aspect-[1.78/1] w-14">
             <Image
-              src="/images/will-invis-white-CROPPED.png"
+              loading="eager"
+              src="/images/will-white-logo.webp"
               alt="logo"
-              className="w-14"
+              fill
+              className="object-cover object-center"
             />
           </Link>
 
@@ -161,11 +163,13 @@ export default function NavHeader() {
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between bg-backgroundBlack px-4 py-6 lg:px-10 xl:px-20">
-      <Link href="/">
+      <Link href="/" className="relative aspect-[1.78/1] w-14 lg:w-[70px]">
         <Image
-          src="/images/will-invis-white-CROPPED.png"
+          loading="eager"
+          src="/images/will-white-logo.webp"
           alt="logo"
-          className="w-14 lg:w-[70px]"
+          fill
+          className="object-cover object-center"
         />
       </Link>
 

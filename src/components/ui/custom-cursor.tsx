@@ -3,10 +3,13 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
+import useMediaQuery from "@/lib/media-query";
 
 export default function CustomCursor() {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -16,6 +19,16 @@ export default function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      const isTouchDevice =
+        "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      setIsMobile(isTouchDevice || isSmallDevice);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -63,12 +76,16 @@ export default function CustomCursor() {
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("resize", checkMobile);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseout", handleMouseOut);
     };
   }, [cursorX, cursorY, isVisible]);
+
+  // Don't render cursor on mobile devices
+  if (isMobile) return null;
 
   return (
     <>

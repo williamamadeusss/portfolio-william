@@ -19,7 +19,7 @@ export const projects: Project[] = [
     shortDescription:
       "Developed a modern, responsive landing page to enhance Indramas' online presence and serve as a primary tool for capturing new client leads.",
     url: "indramas.flonkin.com",
-    thumbnail: "/images/projects/homepage-indramas.png",
+    thumbnail: "/images/projects/homepage-indramas.webp",
     role: "Frontend Developer",
     techStacks: "Next.js, Tailwind CSS, Motion",
     timeline: "In Progress, August 2025",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     shortDescription:
       "A personal portfolio website to display William's biodata and projects accomplished.",
     url: "indramas.flonkin.com",
-    thumbnail: "/images/projects/homepage-portfolio.png",
+    thumbnail: "/images/projects/homepage-portfolio.webp",
     role: "Product Owner, Frontend Developer",
     techStacks: "Next.js, Tailwind CSS, Motion, Aceternity UI",
     timeline: "In Progress",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     shortDescription:
       "An inventory management system website built for final college assesment purposes (currently inactive).",
     url: "stokku.netlify.app",
-    thumbnail: "/images/projects/homepage-stokku.png",
+    thumbnail: "/images/projects/homepage-stokku.webp",
     role: "Product Owner, Frontend Developer",
     techStacks: "Next.js, Tailwind CSS, Java, MongoDB",
     timeline: "4 Month, March 2025",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     shortDescription:
       "A landing page for GAEA to increase this company's visibility around the digital platform.",
     url: "gaea.co.id",
-    thumbnail: "/images/projects/homepage-gaea.png",
+    thumbnail: "/images/projects/homepage-gaea.webp",
     role: "Frontend Developer",
     techStacks: "Next.js, Tailwind CSS, Motion, Wordpress, Supabase",
     timeline: "2 Months, July 2025",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     shortDescription:
       "A landing page for Tocoffee cafe in BSD city to boost its visibility around the internet and attract potential customers.",
     url: "try.toco.id/tocoffee",
-    thumbnail: "/images/projects/homepage-tocoffee.png",
+    thumbnail: "/images/projects/homepage-tocoffee.webp",
     role: "Frontend Developer",
     techStacks: "Next.js, Tailwind CSS, Motion, Supabase",
     timeline: "1 Month",
