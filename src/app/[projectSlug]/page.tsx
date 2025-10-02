@@ -79,8 +79,10 @@ export default async function ProjectSlug({
               <source src={project.thumbnail} />
             </video>
           ) : (
-            <div className="aspect-video w-full rounded-md">
+            <div className="relative aspect-video w-full rounded-md">
               <Image
+                priority
+                loading="eager"
                 src={project?.thumbnail!}
                 alt={project?.title!}
                 fill

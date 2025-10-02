@@ -18,8 +18,42 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "William Amadeus | Software Engineer & Frontend Developer",
-  description: "William's Portfolio created using Next.js and Tailwind CSS",
+  description:
+    "William Amadeus's Personal website portfolio developed using Next.js, Tailwind CSS, Framer Motion, Zod, and Three.js",
   icons: "/favicon.ico",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "William Amadeus | Software Engineer & Frontend Developer",
+    description:
+      "Portfolio website of William Amadeus — Software Engineer passionate about frontend development and building impactful software.",
+    url: "https://portfolio-william-jet.vercel.app",
+    siteName: "William Amadeus Portfolio",
+    images: [
+      {
+        url: "https://portfolio-william-jet.vercel.app/images/projects/homepage-portfolio.webp",
+        width: 1200,
+        height: 630,
+        alt: "Preview image of William Amadeus Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "William Amadeus | Software Engineer & Frontend Developer",
+    description:
+      "Explore William Amadeus’s projects and skills in frontend development, Next.js, and modern web technologies.",
+    images: [
+      "https://portfolio-william-jet.vercel.app/images/projects/homepage-portfolio.webp",
+    ],
+  },
+  alternates: {
+    canonical: "https://portfolio-william-jet.vercel.app",
+  },
 };
 
 export default function RootLayout({
