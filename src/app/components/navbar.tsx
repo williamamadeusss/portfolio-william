@@ -93,7 +93,7 @@ export default function NavHeader() {
           <Link href="/" className="relative aspect-[1.78/1] w-14">
             <Image
               loading="eager"
-              src="/images/will-invis-white-CROPPED.png"
+              src="/images/will-white-logo.webp"
               alt="logo"
               fill
               className="object-cover object-center"
@@ -166,7 +166,7 @@ export default function NavHeader() {
       <Link href="/" className="relative aspect-[1.78/1] w-14 lg:w-[70px]">
         <Image
           loading="eager"
-          src="/images/will-invis-white-CROPPED.png"
+          src="/images/will-white-logo.webp"
           alt="logo"
           fill
           className="object-cover object-center"

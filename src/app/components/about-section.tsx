@@ -16,7 +16,7 @@ export default function AboutSection() {
       <div className="relative hidden aspect-[0.85/1] w-[45%] lg:block">
         <Image
           loading="lazy"
-          src="/images/will.jpg"
+          src="/images/will.webp"
           alt="about will"
           fill
           className="object-cover object-center"

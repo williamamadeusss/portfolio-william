@@ -25,8 +25,9 @@ export default function BiodataSection() {
 
       <div className="relative -z-10 aspect-square w-full shrink-0 lg:w-[45%]">
         <Image
+          priority
           loading="eager"
-          src="/images/will-museum.jpg"
+          src="/images/will-museum.webp"
           alt="foto will"
           fill
           className="object-cover object-center"
