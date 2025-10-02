@@ -66,9 +66,9 @@ export default function ContactSection() {
       <div className="flex w-full flex-col gap-8 lg:gap-12 xl:w-[55%]">
         {/* header */}
         <div className="flex flex-col gap-4 lg:gap-8">
-          <h1 className="border-b-[6px] border-primary pb-2 font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">
+          <h2 className="border-b-[6px] border-primary pb-2 font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">
             CONTACT.
-          </h1>
+          </h2>
 
           <p className="text-medium xl:text-mediumLarge">
             I’m always eager to learn and grow. Feel free to reach out if you’d

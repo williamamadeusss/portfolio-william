@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="relative flex w-full flex-col gap-10 bg-backgroundBlack px-4 py-6 text-background md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
+    <footer className="relative flex w-full flex-col gap-10 bg-backgroundBlack px-4 py-6 text-background md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
       <Particles className="absolute inset-0 w-full" quantity={25} />
       <div className="flex w-full justify-between gap-4">
         <p className="font-montserrat text-smallMedium font-bold md:text-medium lg:text-mediumLarge">
@@ -60,6 +60,6 @@ export default function Footer() {
       <p className="text-center text-small text-neutral-400 md:text-smallMedium">
         © 2025 William Amadeus. Built using Next.js and Tailwind CSS
       </p>
-    </div>
+    </footer>
   );
 }
