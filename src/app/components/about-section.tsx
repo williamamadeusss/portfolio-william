@@ -1,4 +1,4 @@
-import Image from "@/components/ui/image";
+import Image from "next/image";
 import React from "react";
 
 export default function AboutSection() {
@@ -7,12 +7,14 @@ export default function AboutSection() {
       id="about"
       className="flex flex-col-reverse bg-background text-backgroundBlack lg:flex-row"
     >
-      <Image
-        loading="lazy"
-        src="/images/will.jpg"
-        alt="about will"
-        className="hidden w-[45%] object-cover lg:block"
-      />
+      <div>
+        <Image
+          loading="lazy"
+          src="/images/will.jpg"
+          alt="about will"
+          className="hidden w-[45%] object-cover lg:block"
+        />
+      </div>
 
       <div className="flex flex-col gap-6 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-10 lg:py-20 xl:px-20">
         <h2 className="border-b-[6px] border-primary pb-2 text-right font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">

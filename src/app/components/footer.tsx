@@ -1,6 +1,6 @@
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons";
-import Image from "@/components/ui/image";
 import { Particles } from "@/components/ui/particles";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -47,11 +47,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <Image
-          src="/images/will-invis-white-CROPPED.png"
-          alt="logo"
-          className="h-full w-14 lg:w-[70px]"
-        />
+        <div className="relative aspect-[1.78/1] h-full w-14 lg:w-[70px]">
+          <Image
+            src="/images/will-invis-white-CROPPED.png"
+            alt="logo"
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <p className="text-center text-small text-neutral-400 md:text-smallMedium">
