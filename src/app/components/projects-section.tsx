@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Project, projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import useMediaQuery from "@/lib/media-query";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function ProjectsSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -14,9 +15,10 @@ export default function ProjectsSection() {
   return (
     <div
       id="projects"
-      className="flex flex-col gap-8 bg-backgroundBlack px-4 py-10 text-background lg:gap-16 lg:px-10 lg:py-20 xl:px-20"
+      className="relative flex flex-col gap-6 overflow-hidden bg-backgroundBlack px-4 py-10 text-background lg:gap-10 lg:px-10 lg:py-20 xl:px-20"
     >
-      <h2 className="text-center font-montserrat text-title font-extrabold tracking-wide lg:text-mediumHeading">
+      <Spotlight />
+      <h2 className="text-center font-montserrat text-smallHeading font-extrabold tracking-wide lg:text-bigHeading">
         PROJECTS
       </h2>
 
@@ -98,6 +100,7 @@ function ProjectCard({
         </p>
         {/* <p>tech stacks</p> */}
         <Button
+          intent={"secondary"}
           className="mt-3 lg:mt-4"
           size={isSmallDevice ? "small" : "default"}
         >
