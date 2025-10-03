@@ -47,14 +47,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative aspect-[1.78/1] h-full w-14 lg:w-[70px]">
+        <Link
+          href="/"
+          className="relative aspect-[1.78/1] h-full w-14 lg:w-[70px]"
+        >
           <Image
             src="/images/will-invis-white-CROPPED.png"
             alt="logo"
             fill
             className="object-cover"
           />
-        </div>
+        </Link>
       </div>
 
       <p className="text-center text-small text-neutral-400 md:text-smallMedium">
