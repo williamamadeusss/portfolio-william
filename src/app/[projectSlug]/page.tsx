@@ -121,12 +121,7 @@ export default async function ProjectSlug({
           <h2 className="font-montserrat text-title font-bold lg:text-smallHeading">
             The Challenge
           </h2>
-          <p className="text-smallMedium lg:text-base">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Repellendus corrupti eum optio dolore commodi sequi quis, deleniti
-            asperiores, quia, ratione sit id dolorem nemo dolor! Laborum aperiam
-            ipsum fugit exercitationem.
-          </p>
+          <p className="text-smallMedium lg:text-base">{project.challenge}</p>
         </div>
 
         {/* Solutions n lessons learned */}
@@ -134,12 +129,7 @@ export default async function ProjectSlug({
           <h2 className="font-montserrat text-title font-bold lg:text-smallHeading">
             Solution & Lessons Learned
           </h2>
-          <p className="text-smallMedium lg:text-base">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
-            eligendi totam quas quod iure accusantium exercitationem error ullam
-            ipsa porro laboriosam iusto magnam vero quos nesciunt, sapiente
-            reprehenderit, explicabo facere!
-          </p>
+          <p className="text-smallMedium lg:text-base">{project.solution}</p>
         </div>
       </div>
 
