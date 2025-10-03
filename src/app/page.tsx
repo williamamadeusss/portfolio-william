@@ -10,9 +10,9 @@ export default function Home() {
     "@type": "Person",
     name: "William Amadeus",
     jobTitle: "Software Engineer & Frontend Developer",
-    url: "https://portfolio-william-jet.vercel.app/",
+    url: "https://williamamadeus.site/",
     image:
-      "https://portfolio-william-jet.vercel.app/images/projects/homepage-portfolio.webp",
+      "https://williamamadeus.site/images/projects/homepage-portfolio.webp",
     sameAs: [
       "https://github.com/williamamadeusss",
       "https://www.linkedin.com/in/william-amadeus-86667a224/",

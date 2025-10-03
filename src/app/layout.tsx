@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     title: "William Amadeus | Software Engineer & Frontend Developer",
     description:
       "Portfolio website of William Amadeus — Software Engineer passionate about frontend development and building impactful software.",
-    url: "https://portfolio-william-jet.vercel.app",
+    url: "https://williamamadeus.site/",
     siteName: "William Amadeus Portfolio",
     images: [
       {
-        url: "https://portfolio-william-jet.vercel.app/images/projects/homepage-portfolio.webp",
+        url: "https://williamamadeus.site/images/projects/homepage-portfolio.webp",
         width: 1200,
         height: 630,
         alt: "Preview image of William Amadeus Portfolio",
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     description:
       "Explore William Amadeus’s projects and skills in frontend development, Next.js, and modern web technologies.",
     images: [
-      "https://portfolio-william-jet.vercel.app/images/projects/homepage-portfolio.webp",
+      "https://williamamadeus.site/images/projects/homepage-portfolio.webp",
     ],
   },
   alternates: {
-    canonical: "https://portfolio-william-jet.vercel.app",
+    canonical: "https://williamamadeus.site/",
   },
 };
 
