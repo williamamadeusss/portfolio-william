@@ -20,7 +20,12 @@ export const metadata: Metadata = {
   title: "William Amadeus | Software Engineer & Frontend Developer",
   description:
     "William Amadeus's Personal website portfolio developed using Next.js, Tailwind CSS, Framer Motion, Zod, and Three.js",
-  icons: "/favicon.ico",
+  icons: {
+    icon: {
+      url: "/favicon.ico",
+      sizes: "48x48",
+    },
+  },
   robots: {
     index: true,
     follow: true,
