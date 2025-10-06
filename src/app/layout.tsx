@@ -25,6 +25,9 @@ export const metadata: Metadata = {
       url: "/favicon.ico",
       sizes: "48x48",
     },
+    apple: {
+      url: "/favicon.ico",
+    },
   },
   robots: {
     index: true,
