@@ -50,10 +50,10 @@ function ProjectCard({
   return (
     <Link
       className={cn(
-        "relative flex flex-col gap-4 rounded-lg transition-all duration-300 ease-out",
+        "relative flex flex-col gap-2 rounded-md transition-all duration-300 ease-out md:rounded-lg",
         hoveredCard !== null &&
           hoveredCard !== project.projectSlug &&
-          "scale-[0.99] blur-sm",
+          "scale-[0.99] blur-md",
       )}
       href={`/${project.projectSlug}`}
       onMouseEnter={() => setHoveredCard(project.projectSlug)}
@@ -65,19 +65,19 @@ function ProjectCard({
           autoPlay
           muted
           playsInline
-          className="h-full w-full rounded-lg object-cover"
+          className="h-full w-full rounded-md object-cover md:rounded-lg"
           loop
         >
           <source src={project.thumbnail} />
         </video>
       ) : (
-        <div className="relative aspect-video w-full rounded-lg">
+        <div className="relative aspect-video w-full rounded-md md:rounded-lg">
           <Image
             loading="lazy"
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="rounded-lg object-cover"
+            className="rounded-md object-cover md:rounded-lg"
           />
         </div>
       )}
@@ -85,14 +85,14 @@ function ProjectCard({
       {/* dark overlay */}
       <div
         className={cn(
-          "absolute inset-0 rounded-lg bg-black/70 transition-opacity duration-300 lg:bg-black/85",
-          hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
+          "absolute inset-0 rounded-lg bg-black/85 transition-opacity duration-300",
+          hoveredCard === project.projectSlug ? "opacity-100" : "opacity-0",
         )}
       />
 
       <div
         className={cn(
-          "absolute flex h-full w-full flex-col justify-end gap-1 p-4 transition-opacity duration-300 lg:gap-2 lg:p-8",
+          "flex h-full w-full flex-col justify-end gap-1 transition-opacity duration-300 lg:absolute lg:gap-2 lg:p-8",
           hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
         )}
       >
