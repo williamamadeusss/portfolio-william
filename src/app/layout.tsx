@@ -21,14 +21,25 @@ export const metadata: Metadata = {
   description:
     "William Amadeus's Personal website portfolio developed using Next.js, Tailwind CSS, Framer Motion, Zod, and Three.js",
   icons: {
-    icon: {
-      url: "/favicon.ico",
-      sizes: "48x48",
-    },
-    apple: {
-      url: "/favicon.ico",
-    },
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
+      {
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
   },
+  manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,
@@ -81,7 +92,7 @@ export default function RootLayout({
             },
           }}
         />
-        <div className="font-manrope mx-auto max-w-[1540px] text-background">
+        <div className="mx-auto max-w-[1540px] font-manrope text-background">
           <NavHeader />
           {children}
           <Footer />
