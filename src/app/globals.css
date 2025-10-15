@@ -1,6 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-manrope: Manrope, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --color-gray: #f1f6fa;
+  --color-primary: #f59e0b;
+  --color-background: #f0f0f0;
+  --color-background-black: #202020;
+
+  --color-neutral-color-5: #f4f4f3;
+  --color-neutral-color-10: #e8e8e8;
+  --color-neutral-color-20: #d1d1d0;
+  --color-neutral-color-40: #a4a3a2;
+  --color-neutral-color-60: #767573;
+  --color-neutral-color-80: #484744;
+  --color-neutral-color-100: #1b1916;
+
+  --text-xsmall: 10px;
+  --text-xsmall--letter-spacing: 0.4px;
+  --text-small: 12px;
+  --text-small--letter-spacing: 0.4px;
+  --text-small-medium: 14px;
+  --text-small-medium--letter-spacing: 0.5px;
+  --text-medium: 16px;
+  --text-medium--letter-spacing: 0.5px;
+  --text-medium-large: 18px;
+  --text-medium-large--letter-spacing: 0.5px;
+  --text-large: 20px;
+  --text-large--letter-spacing: 0.5px;
+  --text-title: 1.6rem;
+  --text-small-heading: 2.1rem;
+  --text-small-heading--letter-spacing: 0.4px;
+  --text-small-heading--line-height: 1;
+  --text-heading: 2.5rem;
+  --text-small-medium-heading: 2.75rem;
+  --text-small-medium-heading--letter-spacing: 0.4px;
+  --text-small-medium-heading--line-height: 1;
+  --text-medium-heading: 3.25rem;
+  --text-medium-heading--letter-spacing: 0.4px;
+  --text-medium-heading--line-height: 1;
+  --text-medium-big-heading: 3.75rem;
+  --text-medium-big-heading--letter-spacing: 0.4px;
+  --text-medium-big-heading--line-height: 1;
+  --text-big-heading: 4.25rem;
+  --text-big-heading--letter-spacing: 0.4px;
+  --text-big-heading--line-height: 1;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 html {
   scroll-behavior: smooth;

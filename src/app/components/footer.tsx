@@ -6,10 +6,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="relative flex w-full flex-col gap-10 bg-backgroundBlack px-4 py-6 text-background md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
+    <footer className="relative flex w-full flex-col gap-10 bg-background-black px-4 py-6 text-background md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
       <Particles className="absolute inset-0 w-full" quantity={25} />
       <div className="flex w-full justify-between gap-4">
-        <p className="font-montserrat text-smallMedium font-bold md:text-medium lg:text-mediumLarge">
+        <p className="font-montserrat text-small-medium font-bold md:text-medium lg:text-medium-large">
           <span className="text-primary">Always learning</span>
           <br />
           Always improving.
@@ -17,7 +17,7 @@ export default function Footer() {
 
         {/* socials */}
         <div className="flex flex-col gap-2">
-          <p className="text-smallMedium font-bold text-primary md:text-medium lg:text-mediumLarge">
+          <p className="text-small-medium font-bold text-primary md:text-medium lg:text-medium-large">
             Socials
           </p>
           <div className="flex items-center gap-4">
@@ -60,7 +60,7 @@ export default function Footer() {
         </Link>
       </div>
 
-      <p className="text-center text-small text-neutral-400 md:text-smallMedium">
+      <p className="text-center text-small text-neutral-400 md:text-small-medium">
         © 2025 William Amadeus. Built using Next.js and Tailwind CSS
       </p>
     </footer>

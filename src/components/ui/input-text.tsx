@@ -44,7 +44,7 @@ export default function InputText({
           placeholder={placeholder}
           type="text"
           className={cn(
-            "cursor-hover w-full bg-black/15 p-3 text-mediumLarge text-background placeholder-white/50 focus:bg-primary/5 focus:outline-none",
+            "cursor-hover w-full bg-black/15 p-3 text-medium-large text-background placeholder-white/50 focus:bg-primary/5 focus:outline-hidden",
             errorMessages
               ? "border border-red-500"
               : "border-b-2 border-primary placeholder-white/60",
