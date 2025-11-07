@@ -59,18 +59,18 @@ export default function ContactSection() {
   return (
     <div
       id="contact"
-      className="relative flex min-h-screen flex-col gap-6 bg-backgroundBlack px-4 py-10 lg:flex-row lg:px-10 lg:py-20 xl:gap-10 xl:px-20"
+      className="bg-background-black relative flex min-h-screen flex-col gap-6 px-4 py-10 lg:flex-row lg:px-10 lg:py-20 xl:gap-10 xl:px-20"
     >
       <Particles className="absolute inset-0 w-full" />
 
       <div className="flex w-full flex-col gap-8 lg:gap-12 xl:w-[55%]">
         {/* header */}
         <div className="flex flex-col gap-4 lg:gap-8">
-          <h2 className="border-b-[6px] border-primary pb-2 font-montserrat text-smallHeading font-extrabold tracking-wide lg:pb-4 lg:text-bigHeading">
+          <h2 className="border-primary font-montserrat text-small-heading lg:text-big-heading border-b-[6px] pb-2 font-extrabold tracking-wide lg:pb-4">
             CONTACT.
           </h2>
 
-          <p className="text-medium xl:text-mediumLarge">
+          <p className="text-medium xl:text-medium-large">
             I’m always eager to learn and grow. Feel free to reach out if you’d
             like to talk about frontend stuffs, software development, or
             potential project collaborations.
@@ -128,7 +128,7 @@ export default function ContactSection() {
 
       {/* globe 3d element */}
       {isMediumDevice ? (
-        <div className="cursor-hover shrink-0 lg:h-[32.4rem] lg:w-[50%] xl:h-[38.5rem] xl:w-[45%]">
+        <div className="cursor-hover shrink-0 lg:h-[32.4rem] lg:w-[50%] xl:h-154 xl:w-[45%]">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       ) : (

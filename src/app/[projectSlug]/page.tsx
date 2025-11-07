@@ -30,18 +30,18 @@ export default async function ProjectSlug({
   }) {
     return (
       <div className="flex flex-col gap-1">
-        <p className="text-small lg:text-smallMedium">{label}</p>
+        <p className="text-small lg:text-small-medium">{label}</p>
         {link ? (
           <Link
             href={`https://${content}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-medium font-semibold text-primary hover:underline lg:text-mediumLarge"
+            className="text-medium font-semibold text-primary hover:underline lg:text-medium-large"
           >
             {content}
           </Link>
         ) : (
-          <p className="text-medium font-semibold text-primary lg:text-mediumLarge">
+          <p className="text-medium font-semibold text-primary lg:text-medium-large">
             {content}
           </p>
         )}
@@ -58,7 +58,7 @@ export default async function ProjectSlug({
       <div className="flex w-full flex-col justify-center gap-10 px-0 lg:px-14 xl:px-20">
         {/* header */}
         <div className="flex flex-col items-center gap-6">
-          <h1 className="font-montserrat text-mediumHeading font-bold uppercase text-primary lg:text-bigHeading">
+          <h1 className="font-montserrat text-medium-heading font-bold uppercase text-primary lg:text-big-heading">
             {project?.title}
           </h1>
           <h2 className="text-medium lg:text-large">
@@ -118,18 +118,18 @@ export default async function ProjectSlug({
       <div className="flex flex-col gap-6 px-0 lg:gap-10 lg:px-10 xl:px-20">
         {/* Challenge and goal */}
         <div className="flex flex-col gap-2 lg:gap-4">
-          <h2 className="font-montserrat text-title font-bold lg:text-smallHeading">
+          <h2 className="font-montserrat text-title font-bold lg:text-small-heading">
             The Challenge
           </h2>
-          <p className="text-smallMedium lg:text-base">{project.challenge}</p>
+          <p className="text-small-medium lg:text-base">{project.challenge}</p>
         </div>
 
         {/* Solutions n lessons learned */}
         <div className="flex flex-col gap-2 lg:gap-4">
-          <h2 className="font-montserrat text-title font-bold lg:text-smallHeading">
+          <h2 className="font-montserrat text-title font-bold lg:text-small-heading">
             Solution & Lessons Learned
           </h2>
-          <p className="text-smallMedium lg:text-base">{project.solution}</p>
+          <p className="text-small-medium lg:text-base">{project.solution}</p>
         </div>
       </div>
 

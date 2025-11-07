@@ -92,7 +92,7 @@ export default function CustomCursor() {
       {/* Main cursor dot */}
       <motion.div
         className={cn(
-          "pointer-events-none fixed left-0 top-0 z-[9999] rounded-full bg-primary",
+          "pointer-events-none fixed left-0 top-0 z-9999 rounded-full bg-primary",
           isHovering ? "h-[6px] w-[6px] mix-blend-difference" : "h-2 w-2",
         )}
         style={{
@@ -111,7 +111,7 @@ export default function CustomCursor() {
       {/* Cursor ring - only visible on hover */}
       <motion.div
         className={cn(
-          "pointer-events-none fixed left-0 top-0 z-[9998] h-8 w-8 rounded-full border-2 border-primary",
+          "pointer-events-none fixed left-0 top-0 z-9998 h-8 w-8 rounded-full border-2 border-primary",
           isHovering && "mix-blend-difference",
         )}
         style={{

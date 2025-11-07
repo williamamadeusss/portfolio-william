@@ -15,10 +15,10 @@ export default function ProjectsSection() {
   return (
     <div
       id="projects"
-      className="relative flex flex-col gap-6 overflow-hidden bg-backgroundBlack px-4 py-10 text-background lg:gap-10 lg:px-10 lg:py-20 xl:px-20"
+      className="relative flex flex-col gap-6 overflow-hidden bg-background-black px-4 py-10 text-background lg:gap-10 lg:px-10 lg:py-20 xl:px-20"
     >
       <Spotlight />
-      <h2 className="text-center font-montserrat text-smallHeading font-extrabold tracking-wide lg:text-bigHeading">
+      <h2 className="text-center font-montserrat text-small-heading font-extrabold tracking-wide lg:text-big-heading">
         PROJECTS
       </h2>
 
@@ -96,10 +96,10 @@ function ProjectCard({
           hoveredCard === project.projectSlug ? "opacity-100" : "lg:opacity-0",
         )}
       >
-        <h3 className="font-montserrat text-title font-bold text-primary lg:text-smallHeading">
+        <h3 className="font-montserrat text-title font-bold text-primary lg:text-small-heading">
           {project.title}
         </h3>
-        <p className="line-clamp-1 text-smallMedium lg:line-clamp-2 lg:text-medium">
+        <p className="line-clamp-1 text-small-medium lg:line-clamp-2 lg:text-medium">
           {project.shortDescription}
         </p>
         {/* <p>tech stacks</p> */}
