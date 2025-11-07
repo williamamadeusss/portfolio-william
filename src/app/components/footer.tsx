@@ -6,10 +6,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="relative flex w-full flex-col gap-10 bg-background-black px-4 py-6 text-background md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
+    <footer className="bg-background-black text-background relative flex w-full flex-col gap-10 px-4 py-6 md:gap-12 lg:gap-14 lg:px-10 lg:py-10 xl:px-20">
       <Particles className="absolute inset-0 w-full" quantity={25} />
       <div className="flex w-full justify-between gap-4">
-        <p className="font-montserrat text-small-medium font-bold md:text-medium lg:text-medium-large">
+        <p className="font-montserrat text-small-medium md:text-medium lg:text-medium-large font-bold">
           <span className="text-primary">Always learning</span>
           <br />
           Always improving.
@@ -17,16 +17,16 @@ export default function Footer() {
 
         {/* socials */}
         <div className="flex flex-col gap-2">
-          <p className="text-small-medium font-bold text-primary md:text-medium lg:text-medium-large">
+          <p className="text-small-medium text-primary md:text-medium lg:text-medium-large font-bold">
             Socials
           </p>
           <div className="flex items-center gap-4">
             <Link
-              href="https://www.linkedin.com/in/william-amadeus-86667a224/"
+              href="https://www.linkedin.com/in/williamamadeus/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedinIcon className="h-5 w-5 text-background duration-200 hover:text-primary lg:h-6 lg:w-6" />
+              <LinkedinIcon className="text-background hover:text-primary h-5 w-5 duration-200 lg:h-6 lg:w-6" />
             </Link>
 
             <Link
@@ -34,7 +34,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon className="h-5 w-5 text-background duration-200 hover:text-primary lg:h-6 lg:w-6" />
+              <GithubIcon className="text-background hover:text-primary h-5 w-5 duration-200 lg:h-6 lg:w-6" />
             </Link>
 
             <Link
@@ -42,7 +42,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <InstagramIcon className="h-5 w-5 text-background duration-200 hover:text-primary lg:h-6 lg:w-6" />
+              <InstagramIcon className="text-background hover:text-primary h-5 w-5 duration-200 lg:h-6 lg:w-6" />
             </Link>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Footer() {
         </Link>
       </div>
 
-      <p className="text-center text-small text-neutral-400 md:text-small-medium">
+      <p className="text-small md:text-small-medium text-center text-neutral-400">
         © 2025 William Amadeus. Built using Next.js and Tailwind CSS
       </p>
     </footer>
