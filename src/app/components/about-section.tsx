@@ -5,12 +5,12 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="flex flex-col-reverse bg-background text-background-black lg:flex-row"
+      className="bg-background text-background-black flex flex-col-reverse lg:flex-row"
     >
       <div className="relative hidden aspect-[0.85/1] w-[45%] lg:block">
         <Image
           loading="lazy"
-          src="/images/will.webp"
+          src="/images/id-card-will-RAW.webp"
           alt="about will"
           fill
           className="object-cover object-center"
@@ -18,16 +18,16 @@ export default function AboutSection() {
       </div>
 
       <div className="flex flex-col gap-6 px-4 py-10 lg:w-[55%] lg:gap-10 lg:px-10 lg:py-20 xl:px-20">
-        <h2 className="border-b-[6px] border-primary pb-2 text-right font-montserrat text-small-heading font-extrabold tracking-wide lg:pb-4 lg:text-big-heading">
+        <h2 className="border-primary font-montserrat text-small-heading lg:text-big-heading border-b-[6px] pb-2 text-right font-extrabold tracking-wide lg:pb-4">
           ABOUT ME.
         </h2>
 
         <p className="text-medium text-neutral-color-80 lg:text-large">
           I’m William Amadeus, a{" "}
-          <span className="font-bold text-primary">Frontend Developer</span>{" "}
+          <span className="text-primary font-bold">Frontend Developer</span>{" "}
           dedicated to building scalable, performant, and user-friendly web
           applications. With a deep understanding of{" "}
-          <span className="font-bold text-primary">
+          <span className="text-primary font-bold">
             Next.js and Tailwind CSS
           </span>
           , I specialize in turning complex design systems into clean,
@@ -36,7 +36,7 @@ export default function AboutSection() {
           <br />
           My technical strengths lie in translating product goals and UI/UX
           designs into robust web experiences. I thrive in{" "}
-          <span className="font-bold text-primary">
+          <span className="text-primary font-bold">
             fast-paced environments
           </span>{" "}
           where attention to detail and performance matter, and I’m constantly
@@ -47,7 +47,7 @@ export default function AboutSection() {
           problems—whether it’s bringing ambitious UI designs to life,
           fine-tuning performance, or diving into new technologies. I’m always
           eager to push beyond my comfort zone and{" "}
-          <span className="font-bold text-primary">
+          <span className="text-primary font-bold">
             continuously grow as a developer
           </span>
           , exploring new areas of specialization and expanding my capabilities
